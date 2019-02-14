@@ -7,6 +7,7 @@ import Routes from '../routes/index';
 describe('App', () => {
     it('should render correctly', () => {
         const wrapper = shallow(<App />);
+
         expect(wrapper).toMatchSnapshot();
     });
 });
@@ -17,3 +18,4 @@ describe('<Index />', () => {
         expect(wrapper).toHaveLength(1)
     })
 })
+

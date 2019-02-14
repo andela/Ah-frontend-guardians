@@ -1,17 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test the footer should render without crashing 1`] = `
-<div
-  className=""
->
-  <footer
-    className="footer"
-  >
-    <center>
-      <p>
-        Author's Haven .Inc
-      </p>
-    </center>
-  </footer>
-</div>
-`;
+exports[`Test the footer should render without crashing 1`] = `ShallowWrapper {}`;

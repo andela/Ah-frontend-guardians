@@ -3,11 +3,16 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
 import { NavBar} from '../../NavBar';
-import avatar  from '../../src/images/avatar.png';
+
+const mockedProps = {
+    signin:{
+        success: false
+    }
+}
 
 describe('Navbar Test', () => {
 
-    const wrapper = shallow(<NavBar />)
+    const wrapper = shallow(<NavBar {...mockedProps}/>)
 
     test('renders the component without crashing', () => {
         expect(wrapper).toMatchSnapshot()

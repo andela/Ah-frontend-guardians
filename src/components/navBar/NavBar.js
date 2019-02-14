@@ -1,13 +1,11 @@
 import React , { Component } from 'react';
 import store from '../../store/combineStore'
 import {connect} from 'react-redux';
-import avatar from '../../images/avatar.png';
-
 export class NavBar extends Component{
-    render(){
+    render(){        
         return (
             <div className="nav">
-                <nav className="navbar navbar-dark bg-dark" id="nav-bar">
+                <nav id="nav-bar">
                     <a href="#" id="logo">Author's Haven</a>
                     <span className="nav-links">
                         <span className="business-logic">
@@ -15,10 +13,10 @@ export class NavBar extends Component{
                             <a href="#">Articles</a>
                         </span>
                         <span>
-                            {this.props.isLoggedIn ? <a id="avatar" href="#"><img src={avatar} className="avatar"></img></a>:
+                            {this.props.signin.success ? <a id="avatar" href="#"><i className="fas fa-user-circle fa-2x"></i></a>:
                                     <span className="auth-links">
-                                        <a href="#">Signin</a>
-                                        <a href="#">Register</a>
+                                        <a href="/login">Signin</a>
+                                        <a href="/signup">Register</a>
                                     </span>
                             }
                         </span>

@@ -1,8 +1,9 @@
+import loginReducer from './loginReducer'
 const INITIAL_STATE ={
-    isLoggedIn: true
+    success: "OKKKKK"
 };
 
-const navBarReducer = (state=INITIAL_STATE) => {
-    return state
+const navBarReducer = (state=INITIAL_STATE) => {    
+    return loginReducer
 };
 export default navBarReducer;
