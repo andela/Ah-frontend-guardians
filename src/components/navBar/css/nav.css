@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+#nav-bar{
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    left: 0px;
+    top: 0px;
+    background: #25ABD1;
+}
+  
+.nav-links a {
+    text-decoration: none;
+    color: #FFFFFF;
+    width: 68px;
+    height: 70px;
+    left: 495px;
+    top: 3px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 10%;
+}
+
+#logo {
+    position: absolute;
+    height: 50px;
+    left: 57px;
+    margin-top: 9px;
+
+    font-family: 'Pacifico', cursive;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 30px;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    mix-blend-mode: normal;
+    text-decoration: none;
+}
+
+.nav-links {
+    float: right;
+    margin-top: 23px;
+    margin-right: 10%;
+    margin-left: -10%;
+}
+
+.nav-links a:hover {
+    color: rgb(30, 210, 210);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    margin-left: 110%;
+    margin-top: -310%;
+    margin-bottom: 5%;
+    background: #ffffff;
+    border-radius: 19px;
+}
+
+#avatar {
+    margin-right: 0;
+}
+
+.avatar:hover{
+    background: rgb(30, 210, 210);
+}
+
+
+@media only screen and (max-width: 768px) {
+    #logo {
+        color: #ffffff;
+    }
+
+    .nav-links {
+        float: right;
+        margin-top: 23px;
+        margin-right: 24%;
+    }
+
+    .business-logic {
+        margin-right: 0%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #logo {
+        margin-left: -12%;
+        color: #ffffff;
+        font-size: 1.3em;
+    }
+
+    .nav-links {
+        float: right;
+        margin-top: 23px;
+        margin-right: 10%;
+    }
+
+    .nav-links a {
+        font-size: 0.8em;
+    }
+
+    #avatar {
+        margin-left: -10%;
+    }
+}

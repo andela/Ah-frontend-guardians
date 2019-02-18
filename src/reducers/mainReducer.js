@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import navBarReducer from './navBarReducer';
 
 const InitialState = {
   start: false,
@@ -8,8 +9,9 @@ function startReducer(state = InitialState) {
   return state;
 }
 
-const rootReducer = combineReducers({
+const mainReducer = combineReducers({
   start: startReducer,
+  navBarReducer
 });
 
-export default rootReducer;
+export default mainReducer;
