@@ -1,19 +1,12 @@
 import { combineReducers } from 'redux';
 import loginReducer from "./loginReducer";
 import navBarReducer from './navBarReducer';
-
-const InitialState = {
-  start: false,
-};
-
-function startReducer(state = InitialState) {
-  return state;
-}
+import signupReducer from './signup/signUpReducer'
 
 const mainReducer = combineReducers({
-  start: startReducer,
   signin: loginReducer,
-  navBarReducer
+  navBarReducer,
+  signup: signupReducer,
 });
 
 export default mainReducer;

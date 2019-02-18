@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SocialMediaLinks = (props) => {
-return (
+  return (
     <div className="links_outline">
       <button type="submit" className="form_button">Login</button>
       <p className="social_media_login">or Login with your social Media</p>
@@ -22,7 +22,7 @@ return (
           </a>
         </li>
       </ul>
-      <p className="social_media_login"> Don't have an account, <font color="red"><a href='/register' id = "register_link">Register</a></font>
+      <p className="social_media_login"> Don't have an account, <font color="red"><a href='/signup' id="register_link">Register</a></font>
       </p><p>{props.data}</p>
     </div>
   );
