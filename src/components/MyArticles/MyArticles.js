@@ -19,15 +19,16 @@ export class MyArticles extends Component {
         </div>
         <div className="col-md-4">
           <h3>{article.title}</h3>
-          <p className="desc">{article.description}</p>
-          <p>
+          <a className="desc">{article.description}</a>
+          <a><p></p>
             by <span className="author">{article.author.username}</span> |
             <span className="read_time"> {article.read_time} min read</span>
-          </p>
-          <p>
+          </a>
+          <p></p>
+          <a>
             <span className="rating">Rating: </span>
             <span className="rating-value">{article.average_rating}</span>
-          </p>
+          </a>
         </div>
         <div className="col-md-4">
           <div className="buttons mt-5">

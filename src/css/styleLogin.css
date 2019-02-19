@@ -82,21 +82,6 @@ h1 {
 p #welcome_text {
   background: #000000;
 }
-<<<<<<< HEAD
-=======
-.social_media_login {
-  width: 100%;
-  margin: 20px auto;
-  padding-bottom: 15px; 
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 15px;
-  text-align: center;
-  color: #000000;
-}
->>>>>>> feature(SocialLogin): Social Login via Google and Facebook
 .social-icons {
   text-align: center;
 }
