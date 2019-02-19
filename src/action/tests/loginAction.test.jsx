@@ -1,35 +1,35 @@
-import { LOGIN_FAIL, LOGIN_SUCCESS } from '../actionType/loginType/loginType'
 import * as actions from "../actionCreator/login/loginCreator";
 import axios from "axios";
 import moxios from "moxios";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import MockAdapter from "axios-mock-adapter";
+import { LOGIN_FAIL, LOGIN_SUCCESS } from '../actionType/loginType/loginType'
 
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe("Login actions", () => {
-  it("should handle USER_LOGGED_IN", () => {
+describe("comment on article successfully", () => {
+  it("should comment on article successfully", () => {
     const signUpData = {
       user: {
         password: "Nabulo@2018",
         username: "nabulo",
       },
     };
-        
+
     const expectedAction = {
       type: "LOGIN_SUCCESS",
       payload: signUpData,
     };
-    
+
     actions.type = "LOGIN_SUCCESS";
-    
+
     expect(
       actions.fetchLoginSuccess({
         user: { password: "Nabulo@2018", username: "nabulo" },
-      })
+      }),
     ).toEqual(expectedAction);
   });
 });
@@ -39,15 +39,15 @@ describe('create signin failure', () => {
       const error = { eror: 'username doesnot exist' };
       const expectedAction = {
           type: LOGIN_FAIL,
-          error: error,
+          error,
       };
-      
+
       expect(actions.fetchLoginFailure(error)).toEqual(expectedAction)
   })
 })
 
 describe("login thunk actions", () => {
-  let mockAdapter = new MockAdapter(axios);
+  const mockAdapter = new MockAdapter(axios);
   const flushAllPromises = () => new Promise(resolve => setImmediate(resolve));
   const store = mockStore({ data: {} });
 
@@ -86,10 +86,10 @@ describe("login thunk actions", () => {
           {
             username: "nabulo",
             password: "password",
-            email: "nabulo@gmail.com",  
+            email: "nabulo@gmail.com",
           },
-          'https://ah-backend-guardians-staging.herokuapp.com/api/users/login/'
-        )
+          'https://ah-backend-guardians-staging.herokuapp.com/api/users/login/',
+        ),
       )
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);
@@ -111,11 +111,12 @@ describe("login thunk actions", () => {
         type: LOGIN_FAIL,
         payload: {
           user: {
-            token: "123456trgeqgaf"
-          }
-        }
-      }
+            token: "123456trgeqgaf",
+          },
+        },
+      },
     ];
+
     store
       .dispatch(
         actions.signinAction(
@@ -124,9 +125,9 @@ describe("login thunk actions", () => {
             password: "password",
             email: "nabulodoreen@gmail.com",
           },
-          'https://ah-backend-guardians-staging.herokuapp.com/api/users/login/'
-        )
-      ).then(() => {      
+          'https://ah-backend-guardians-staging.herokuapp.com/api/users/login/',
+        ),
+      ).then(() => {
         expect(store.getActions()).toEqual(expectedActions);
       });
   });

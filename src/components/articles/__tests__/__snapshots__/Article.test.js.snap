@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fetch Article should render without crushing 1`] = `
+<Article
+  article={
+    Object {
+      "author": Object {
+        "email": "",
+        "username": "",
+      },
+      "body": "",
+      "created_at": "",
+      "description": "",
+      "image_url": null,
+      "slug": "",
+      "title": "",
+      "updated_at": "",
+    }
+  }
+  articleReducer={
+    Object {
+      "article": Object {},
+    }
+  }
+/>
+`;

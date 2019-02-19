@@ -42,7 +42,7 @@ h1 {
 .login_input{
   padding-left: 10px;
 }
-.login_input:focus,{
+.login_input:focus{
   outline: none;
   padding-left: 10px;
 }

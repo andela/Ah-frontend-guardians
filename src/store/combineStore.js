@@ -1,17 +1,12 @@
 import { applyMiddleware, createStore } from 'redux';
-import mainReducer from '../reducers/mainReducer.js';
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-
-const middleware = [thunk];
-const initialState = {};
-
-// const store = createStore(
-//     mainReducer,
-//     initialState,
-//     composeWithDevTools(applyMiddleware(...middleware)),
-//     );
+import mainReducer from '../reducers/mainReducer.js';
+import { getDataThunk } from '../actions/ArticleActionCreator';
+import { getAllArticles } from '../actions/ArticleActionCreator';
 
 const store = createStore(mainReducer, composeWithDevTools(applyMiddleware(thunk)));
+
+store.dispatch(getDataThunk('articles', getAllArticles));
 
 export default store;
