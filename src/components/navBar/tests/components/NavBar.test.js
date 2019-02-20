@@ -7,6 +7,9 @@ import { MapStateToProps, NavBar } from '../../NavBar';
 const mockedProps = {
     signin: {
         success: false
+    },
+    social:{
+        isAuthenticated: false
     }
 }
 

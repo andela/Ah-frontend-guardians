@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SocialLinks from './SocialLinks';
 import '../../css/signup.css';
 import Input from './Input'
 

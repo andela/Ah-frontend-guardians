@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store/combineStore';
 import "./components/navBar/css/nav.css";
 import "./components/Footer/css/footer.css";
+import "./css/styleLogin.css";
 import Routes from "./routes";
 import "react-tagsinput/react-tagsinput.css";
 import "react-quill/dist/quill.snow.css";

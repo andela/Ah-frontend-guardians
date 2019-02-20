@@ -5,7 +5,6 @@ import * as type from './actionTypes';
 export const fetchSignUp = (data) => (dispatch) =>
     axios.post('https://ah-backend-guardians-staging.herokuapp.com/api/users/', data)
         .then((response) => {
-            console.log(response.data)
             dispatch({
                 type: type.FETCH_SIGNUP_SUCCESS,
                 message: response.data
