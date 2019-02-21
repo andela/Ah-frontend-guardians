@@ -1,18 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import HomeView from '../views/HomeView.js';
-import LoginView from '../views/LoginView';
-import Header from '../components/Header';
+import NavBar from '../components/navBar/NavBar';
+import Footer from '../components/Footer/Footer';
 
 const Routes = () => (
-  <Router>
-    <div>
-      <Header />
-      <Route exact path="/" component={HomeView} />
-      <Route exact path="/login" component={LoginView} />
-    </div>
-  </Router>
+  <div>
+    <Router>
+      <div>
+        <NavBar />
+      </div>
+    </Router>
+    <Footer/>
+  </div>
 );
 
 export default Routes;
