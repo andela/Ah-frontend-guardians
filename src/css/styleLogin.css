@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico%7CPoppins');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f3f3f3;
+}
+
+.form_outline {
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(37, 171, 209, 0.15);
+  border-radius: 18px;
+  border: 0px solid black;
+}
+.links_outline{
+  width: 100%;
+}
+h1 {
+  margin-top: 25px;
+  font-family: Pacifico;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  color: #25abd1;
+  mix-blend-mode: normal;
+}
+.login_input,
+.form_button {
+  width: 100%;
+  margin: 9.3px auto;
+  height: 46.84px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(37, 171, 209, 0.25);
+  border-radius: 12px;
+  border: 0px;
+}
+.login_input{
+  padding-left: 10px;
+}
+.login_input:focus,{
+  outline: none;
+  padding-left: 10px;
+}
+#welcome_text {
+  width: 450px;
+  margin: 40px auto;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 15px;
+  text-align: center;
+  color: #000000;
+}
+.form_button {
+  background: #25abd1;
+  box-shadow: 0px 4px 4px rgba(16, 12, 210, 0.25);
+  border-radius: 12px;
+  color: #ffffff;
+  outline:none;
+  border: none;
+}
+.form_button:focus{
+  outline: none;
+}
+#login_form {
+  width: 70%;
+  margin: 0px auto;
+  padding-top: 100px;
+}
+::placeholder {
+  color: #000000;
+  font-family: Poppins;
+  padding-left: 20px;
+}
+
+p #welcome_text {
+  background: #000000;
+}
+.social_media_login {
+  width: 100%;
+  margin: 30px auto 50px;
+  padding-bottom: 15px; 
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 15px;
+  text-align: center;
+  color: #000000;
+}
+.social-icons {
+  text-align: center;
+}
+.social-icons li {
+  display: inline-block;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.social-icons li a {
+  border-bottom: none;
+}
+.social-icons li img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+#register_link{
+  color: red;
+}
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+#wrong_user{
+  width: 96%;
+  margin: 0px auto;
+  color: red;
+  font-size:17px;
+  text-align: center;
+  padding-top:20px; 
+}
+.inputError{
+  color:red;
+  font-size:17px;
+}

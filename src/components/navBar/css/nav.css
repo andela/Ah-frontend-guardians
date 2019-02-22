@@ -13,7 +13,7 @@
 .nav-links a {
     text-decoration: none;
     color: #FFFFFF;
-    width: 68px;
+    width: 80px;
     height: 70px;
     left: 495px;
     top: 3px;
@@ -47,10 +47,9 @@
 }
 
 .nav-links {
+    width:25%;
     float: right;
     margin-top: 23px;
-    margin-right: 10%;
-    margin-left: -10%;
 }
 
 .nav-links a:hover {
@@ -111,5 +110,6 @@
 
     #avatar {
         margin-left: -10%;
+        /* float:left; */
     }
 }
