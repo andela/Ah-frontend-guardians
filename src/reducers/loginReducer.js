@@ -1,9 +1,12 @@
-import { LOGIN_FAIL, LOGIN_SUCCESS } from '../action/actionType/loginType/loginType';
+import {
+  LOGIN_FAIL,
+  LOGIN_SUCCESS
+} from '../action/actionType/loginType/loginType';
 
 const initState = {
   success: false,
   data: {},
-  errors: {},
+  errors: {}
 };
 
 function loginReducer(state = initState, action) {
@@ -13,14 +16,14 @@ function loginReducer(state = initState, action) {
         ...state,
         success: true,
         data: action.payload,
-        errors: null,
+        errors: null
       };
     case LOGIN_FAIL:
       return {
         ...state,
         errors: action.error,
         success: false,
-        data: null,
+        data: null
       };
     default:
       return state;

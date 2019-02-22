@@ -23,7 +23,7 @@ $color-alert: #b71c1c;
 
 .header {
   background-color: $colour;
-  // color: #ffffff;
+  color: #ffffff;
   padding: 1em;
 }
 
@@ -39,7 +39,7 @@ label {
   background-color: $colour;
 }
 
-// p {
-//   color: $color-alert;
-//   font-size: 12px;
-// }
+p {
+  color: $color-alert;
+  font-size: 12px;
+}

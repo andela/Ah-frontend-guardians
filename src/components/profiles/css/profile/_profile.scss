@@ -1,0 +1,103 @@
+$brand-color: #25abd1;
+
+.btn-default {
+  background-color: $brand-color;
+  border-radius: 15px;
+  color: white;
+}
+
+.brand-color {
+  color: $brand-color;
+  border-color: $brand-color;
+}
+.py-3 {
+  margin-top: 55px;
+  padding-top: 4%;
+}
+
+#avatar2 {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.btn-align {
+  float: right;
+}
+
+.profile-padding {
+  padding-top: 1rem;
+}
+.profile-label-border {
+  margin-right: 70%;
+  border-color: $brand-color;
+}
+
+.card {
+  border-bottom: 2px solid;
+  border-color: $brand-color;
+  border-top: none;
+}
+
+.bio {
+  padding-left: 2rem;
+}
+
+.editavatar {
+  height: 7rem;
+  width: 9rem;
+}
+
+.form-control1 {
+  text-transform: capitalize;
+}
+
+.control-label {
+  color: $brand-color;
+}
+
+.btn-primary {
+  background-color: #f4f4f4;
+  border-radius: 15px;
+  color: $brand-color;
+  border-color: 2px solid $brand-color;
+}
+
+/* Image upload styling */
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn2 {
+  border: 2px solid $brand-color;
+  color: $brand-color;
+  background-color: #f4f4f4;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 3%;
+  width: 100%;
+}
+
+.upload-btn-wrapper input[type='file'] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.col-md-1 {
+  max-width: none;
+}
+.fa-9x{
+  color: $brand-color;
+  margin-left: 5px;
+  margin-top: 5px;
+}

@@ -19,7 +19,8 @@ export const signinAction = userData => (dispatch) => {
   return (axios.post('https://ah-backend-guardians-staging.herokuapp.com/api/users/login/', userData, { headers:headers })
       .then((response) => {  
         dispatch(fetchLoginSuccess(response.data))
-        window.localStorage.setItem('token', response.data.user['token'])        
+        window.localStorage.setItem('token', response.data.user['token']) 
+        window.localStorage.setItem('username', response.data.user['username'])         
       })
       .catch((error) => {
           dispatch(fetchLoginFailure(error.response))

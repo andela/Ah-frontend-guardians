@@ -1,0 +1,3 @@
+export const VIEW_PROFILE = 'VIEW_PROFILE';
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+

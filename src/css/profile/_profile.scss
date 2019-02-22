@@ -1,0 +1,51 @@
+$brand-color: #25ABD1;
+
+body {
+    font-family:Poppins,Helvetica, Arial, sans-serif;
+}
+
+
+.btn-default{
+  background-color:$brand-color;
+  border-radius: 10%;
+  color: white;
+}
+
+.brand-color{
+  color: $brand-color;
+  border-color: $brand-color;
+}
+
+.avatar{
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.btn-align{
+  float: right;
+}
+
+.profile-padding{
+  padding-top: 1rem;
+}
+.profile-label-border{
+  margin-right: 70%;
+  border-color:$brand-color;
+  
+}
+
+.card{
+  border-bottom:2px solid; 
+  border-color: $brand-color;
+  border-top:none;
+}
+
+.bio{
+  padding-left:2rem;
+}
+
+.editavatar{
+  
+  height: 10rem;
+  width: 12rem;
+}
