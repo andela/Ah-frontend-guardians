@@ -2,16 +2,15 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
-import { NavBar} from '../../NavBar';
+import { MapStateToProps, NavBar } from '../../NavBar';
 
 const mockedProps = {
-    signin:{
+    signin: {
         success: false
     }
 }
 
 describe('Navbar Test', () => {
-
     const wrapper = shallow(<NavBar {...mockedProps}/>)
 
     test('renders the component without crashing', () => {
@@ -22,4 +21,13 @@ describe('Navbar Test', () => {
     test('renders the component', () => {
         expect(wrapper).toBeTruthy()
     })
+
+    test('maps states to props', () => {
+        const mockedState = {
+            navBarReducer: { navBarReducer: { sigin: true } }
+        }
+        const state = MapStateToProps(mockedState);
+
+        expect(state.navBarReducer).toEqual({ sigin: true });
+    });
 })

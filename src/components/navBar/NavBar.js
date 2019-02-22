@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import store from '../../store/combineStore'
 import { connect } from 'react-redux';
+import NavLink from 'react-router-dom/NavLink';
+
 export class NavBar extends Component {
     render() {
         return (
@@ -9,14 +11,14 @@ export class NavBar extends Component {
                     <a href="#" id="logo">Author's Haven</a>
                     <span className="nav-links">
                         <span className="business-logic">
-                            <a href="#">Home</a>
+                            <NavLink to="/">Home</NavLink>
                             <a href="#">Articles</a>
                         </span>
                         <span>
-                            {this.props.signin.success ? <a id="avatar" href="#"><i className="fas fa-user-circle fa-2x"></i></a> :
+                            {this.props.signin.success ? <NavLink to="/profile" id="avatar"><i className="fas fa-user-circle fa-2x"></i></NavLink> :
                                 <span className="auth-links">
-                                    <a href="/login">Signin</a>
-                                    <a href="/signup">Register</a>
+                                    <NavLink to="/login">Signin</NavLink>
+                                    <NavLink to="/signup">Register</NavLink>
                                 </span>
                             }
                         </span>
@@ -30,7 +32,7 @@ export class NavBar extends Component {
     }
 }
 
-const MapStateToProps = (state) => {
+export const MapStateToProps = (state) => {
     return state.navBarReducer
 }
 
