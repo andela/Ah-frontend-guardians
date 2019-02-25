@@ -17,7 +17,6 @@ export class HomeView extends Component {
 
   handleClick(e) {
     e.preventDefault();
-    console.log(this.props)
     if (this.props.signin) {
     this.props.signin.success
       ? this.props.history.push('/articles')
