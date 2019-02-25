@@ -37,7 +37,7 @@ module.exports = {
           }
         ]
       }
-    ]
+    ],
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
@@ -48,10 +48,10 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'index.html'),
-      filename: './index.html',
-    })],
+  new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, 'src', 'index.html'),
+    filename: './index.html',
+  })],
   devServer: {
     contentBase: './dist',
     hot: true,

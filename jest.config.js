@@ -48,7 +48,8 @@ module.exports = {
    *source file paths, matched files will skip transformation
    */
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
-  // modulePathIgnorePatterns: ['<rootDir>/src/store/combineStore.js'],
+  modulePathIgnorePatterns: ["<rootDir>/src/store/combineStore.js", "<rootDir>/src/index.js",
+    "<rootDir>/src/reducers/mainReducer.js", "<rootDir>/src/routes/index.js"],
 
   // Indicates whether each individual test should be reported during the run
   verbose: false,

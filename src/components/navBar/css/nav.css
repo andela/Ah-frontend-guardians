@@ -31,7 +31,6 @@
     position: absolute;
     height: 50px;
     left: 57px;
-    margin-top: 9px;
 
     font-family: 'Pacifico', cursive;
     font-style: normal;
@@ -58,12 +57,12 @@
 
 .avatar {
     width: 40px;
-    height: 40px;
     margin-left: 110%;
-    margin-top: -310%;
-    margin-bottom: 5%;
+    margin-top: -35%;
     background: #ffffff;
     border-radius: 19px;
+    z-index: 1;
+    border: black 1px solid;
 }
 
 #avatar {
@@ -72,6 +71,10 @@
 
 .avatar:hover{
     background: rgb(30, 210, 210);
+}
+
+.business-logic {
+    margin-right: 0%;
 }
 
 
@@ -86,9 +89,7 @@
         margin-right: 24%;
     }
 
-    .business-logic {
-        margin-right: 0%;
-    }
+    
 }
 
 @media only screen and (max-width: 480px) {
