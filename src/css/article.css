@@ -109,3 +109,14 @@ p {
   position: relative;
   flex: 1;
 }
+#bookmark:hover {
+  transform:scale(1.3);
+  color: red;
+}
+#bookmark {
+  text-shadow: 2px 2px 4px #000000;
+}
+.middle {
+  display: flex;
+  justify-content: space-between;
+}

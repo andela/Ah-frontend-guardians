@@ -6,6 +6,7 @@ import { NavBar } from '../navBar/NavBar';
 import Footer from '../Footer/Footer';
 import renderHTML from 'react-render-html';
 
+import Bookmark from '../Bookmark/Bookmark'
 export class Article extends Component {
   componentDidMount() {
     if (this.props.match) {
@@ -41,7 +42,7 @@ export class Article extends Component {
         <div id="singleArticle">
           <div id="authorColor">{author && author.username}</div>
 
-          <div id="articleReadTime">{read_time + ' min read'}</div>
+          <div id="articleReadTime">{read_time + ' mins read'}</div>
           <div id="contentA">
             <div>
               <h2>{title}</h2>
@@ -50,10 +51,9 @@ export class Article extends Component {
               <h5>{description}</h5>
             </div>
             <div id="bodycolor">{renderHTML(body)}</div> <br />
-            
-          </div><br/>
-          <div id="tagstyle" className="btn btn-primary">{tags}</div>
-        </div>
+
+          </div><br />
+          <div className="middle"><div id="tagstyle" className="btn btn-primary">{tags}</div><Bookmark slug={slug} /></div>        </div>
         <Footer />
       </div>
     );
