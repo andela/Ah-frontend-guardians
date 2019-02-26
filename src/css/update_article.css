@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+.parent {
+  margin-top: 80px;
+  background: #f3f3f3;
+}
+
+.editparent {
+  margin-top: 80px;
+  padding: 2rem;
+  background: #ffffff;
+}
+
+#title,
+#description,
+#body {
+  font-family: Poppins;
+  font-style: normal;
+  line-height: normal;
+  border: none;
+  border-bottom: 2px solid rgba(37, 171, 209, 0.5);
+  width: 100%;
+}
+
+#title {
+  font-weight: bold;
+  font-size: 33px;
+}
+
+#description {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.form-elements {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 24px;
+  color: rgba(37, 171, 209, 0.5);
+  margin-bottom: 1rem;
+}
+
+#body {
+  font-size: 15px;
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.ql-editor {
+  min-height: 350px;
+}
+
+#tags {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 15px;
+  margin-bottom: 2rem;
+}
+
+.save-changes-btn {
+  background: #25abd1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  margin: 1rem;
+  color: #ffffff;
+}
