@@ -1,0 +1,187 @@
+$colour: rgba(#FFFFFF, 1);
+$post-color: rgba(#25ABD1, 1);
+
+#allArticles{
+  height: 70px;
+  left: 10%;
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  padding-left: 5px;
+  justify-content: space-between;
+  margin: auto; 
+  text-align: justify;
+  text-justify: inter-word;
+}
+#allArticles a:hover{
+  text-decoration: none !important;
+}
+#singleArticle{
+  position: absolute;
+  margin-top: 80px;
+  width: 80%;
+  height: auto;
+  left: 10%;
+  box-shadow: 0 0 3px #ccc;
+  text-align: justify;
+  text-justify: inter-word;
+}
+#articleform{
+  position: absolute;
+  height: auto;
+  left: 20%;
+  top: 22%;
+  border-radius: 28px;
+  width:60%;
+  margin:0 auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+#title{
+  width: 100%;
+  height: 60px;
+  border: 1px;
+  border-bottom: 1px solid#25ABD1;
+}
+#articleImage{
+  border-top-right-radius: 18px;
+  border-top-left-radius: 18px;
+}
+#homeImage{
+  width: 80%;
+}
+#authorColor{
+  color: #9D3333;
+  font-weight: bold;
+
+}
+#articleReadTime{
+  color: #9D3333;
+  font-weight: normal
+
+}
+
+#description{
+  width: 100%;
+  height: 60px;
+  border: 1px;
+  border-bottom: 1px solid#25ABD1;
+}
+#body{
+  width: 100%;
+  border: 1px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+    }
+#post{
+  color: $colour;
+  background-color: $post-color;
+  border-radius: 20px;
+  left: 90%;
+  // top: 210px;
+  width: 10%;
+  height: 15%;
+  float: right;
+}
+.article-box {
+  width: 300px;
+  height: 320px;
+  border-radius: 18px;
+  margin: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  text-overflow: ellipsis;
+  background: white;
+}
+.welcome_msg{
+  font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 15px;
+}
+#welcome_header{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 27px;
+  color: black;
+}
+#cont{
+  padding: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 15px;
+}
+h2 {
+    color:fff;
+    font-size: 26px;
+}
+h3 {
+  font-size: 16px;
+}
+#Nav {
+    color: #000000;
+}
+#createArticleButton {
+  background: #25ABD1;
+  border: 1px solid #25ABD1;
+  cursor: pointer;
+  border-radius: 18px;
+  color: #FFFFFF;
+}
+#contentA{
+  margin-top: 32px;
+}
+
+
+.react-tagsinput-input {
+  width: 100px !important;
+}
+
+.react-tagsinput {
+  width: 80% !important;
+}
+
+#tagstyle{
+
+
+}
+.showbiz{
+  position: absolute;
+  width: 100%;
+  height: 271px;
+  left: 0px;
+  background:#425456 no-repeat center center fixed;
+  background-blend-mode: overlay;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: cover;
+
+}
+#textOverlay{
+  align-items: center;
+  width: 60%;
+  height: 271px;
+  top: 129px;
+  align-content: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 5% auto;
+}
+ul {
+  list-style-type: none;
+  }
+.ql-editor{
+  min-height: 600px !important;
+  max-height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+.ql-editor p{
+  color: #000000;
+}

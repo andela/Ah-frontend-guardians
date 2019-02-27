@@ -10,12 +10,16 @@ import Articles from '../components/MyArticles/Edit Article';
 import GetProfileView from '../views/profiles/GetProfileView';
 import EditProfileView from '../views/profiles/EditProfileView';
 import '../css/toast.css';
+import HomeView from '../views/homeView/homeView';
+import CreateArticle from '../components/articles/CreateArticle';
+import '../css/toast.css';
+import { Article } from '../components/articles/';
 
 const Routes = () => (
   <div>
     <Router>
       <div>
-        <Route exact path="/" component={App} />
+        {/* <Route exact path="/" component={App} /> */}
         <Route path="/login" component={LoginView} />
         <Route exact path="/signup" component={SignUpView} />
         <Route exact path="/profile" component={GetProfileView} />
@@ -26,11 +30,13 @@ const Routes = () => (
           path="/article/:slug/edit"
           render={props => <Articles {...props} />}
         />
+        <Route exact path="/article/:slug/edit" render={(props) => <Articles {...props} />} />
+        <Route exact path="/" component={HomeView} />
+        <Route exact path="/articles/" component={CreateArticle} />
+        <Route exact path="/article/:slug" component={Article} />
         <ToastContainer />
       </div>
     </Router>
   </div>
 );
-
 export default Routes;
-{/* <NavBar /> */}

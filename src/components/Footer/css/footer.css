@@ -8,13 +8,10 @@ footer {
     top: 100%;
     bottom: 0;
     padding-top: 0.2%;
-    margin-top: 20%;
-
+    margin-top: 25%;
     background: #25ABD1;
-
     font-family: 'Poppins';
 }
-
 footer p {
     color: #ffffff;
     margin-top: 32px;
