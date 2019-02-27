@@ -1,0 +1,20 @@
+
+.margin-1 {
+  margin: 1rem;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.green {
+  color: #008000;
+}
+
+#thumbs-up:hover {
+  cursor: pointer;
+}
+
+#thumbs-down:hover {
+  cursor: pointer;
+}
