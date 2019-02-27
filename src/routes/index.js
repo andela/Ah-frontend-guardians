@@ -1,13 +1,14 @@
 import React from 'react';
 import '../css/toast.css';
+import LoginView from '../components/views/loginView/loginView';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import LoginView from '../components/views/loginView/loginView';
 import SignUpView from '../components/views/signup/SignUpView';
 import Profile from '../views/Profile/ProfileView';
 import Articles from '../components/MyArticles/Edit Article';
 import GetProfileView from '../views/profiles/GetProfileView';
 import EditProfileView from '../views/profiles/EditProfileView';
+import EditRatingsView from '../views/ratings/EditRatingsView';
 import HomeView from '../views/homeView/homeView';
 import CreateArticle from '../components/articles/CreateArticle';
 import { Article } from "../components/articles";
@@ -27,6 +28,7 @@ const Routes = () => (
         <Route exact path="/" component={HomeView} />
         <Route exact path="/articles/" component={CreateArticle} />
         <Route exact path="/article/:slug" component={Article} />
+        <Route exact path="/rating" component={EditRatingsView} />
         <ToastContainer />
         <Route path="/reset-email" component={ResetEmail} />
         <Route path="/reset-password/:slug" component={ResetPassword} />

@@ -4,7 +4,7 @@ const initialState = {
 };
 
 describe('get a profile success', () => {
-  it('should be able to get an article', () => {
+  it('should be able to get a profile', () => {
     const profile = {};
 
     const action = {
@@ -15,7 +15,7 @@ describe('get a profile success', () => {
     expect(newState.profile).toEqual(profile);
   });
 
-  it('should be able to edit an article', () => {
+  it('should be able to edit a profile', () => {
     const profile = {};
 
     const action = {

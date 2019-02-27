@@ -10,6 +10,9 @@ import profileReducer from './profileReducer/profileReducer'
 import errorReducer from "./ErrorReducer";
 import { resetEmailReducer } from './resetEmailReducer';
 import { resetPasswordReducer } from './resetPasswordReducer';
+import ratingsReducer from './ratingsReducer/ratingsReducer';
+
+
 
 const mainReducer = combineReducers({
   signin: loginReducer,
@@ -23,6 +26,7 @@ const mainReducer = combineReducers({
   resetPasswordReducer,
   bookmark: bookmarkReducer,
   bookmarks: createBookmarkReducer,
-  likeArticleReducer
+  likeArticleReducer,
+  ratingsReducer
 });
 export default mainReducer;
