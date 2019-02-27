@@ -5,7 +5,7 @@ FN:13,(anonymous_1)
 FN:18,(anonymous_2)
 FN:18,(anonymous_3)
 FN:20,(anonymous_4)
-FN:24,(anonymous_5)
+FN:25,(anonymous_5)
 FNF:6
 FNH:6
 FNDA:2,(anonymous_0)
@@ -21,9 +21,10 @@ DA:18,4
 DA:19,2
 DA:21,1
 DA:22,1
-DA:25,1
-LF:8
-LH:8
+DA:23,1
+DA:26,1
+LF:9
+LH:9
 BRF:0
 BRH:0
 end_of_record
@@ -219,14 +220,6 @@ FNF:1
 FNH:1
 FNDA:1,(anonymous_0)
 DA:3,5
-DA:4,1
-LF:2
-LH:2
-BRF:0
-BRH:0
-end_of_record
-TN:
-SF:/Users/henrytomusange/Desktop/Ah-frontend-guardians/src/components/MyArticles/DeleteButton.js
 FN:7,(anonymous_0)
 FN:12,(anonymous_1)
 FN:20,(anonymous_2)

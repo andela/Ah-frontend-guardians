@@ -24,7 +24,7 @@ export class Banner extends Component {
 
   render() {
     return (
-      <div id="parent" className="container py-2">
+      <div id="parent" className="container">
         <div className="banner">
           <span id="article" onClick={this.handleClick.bind(this)}>
             Articles
