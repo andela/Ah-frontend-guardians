@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Social Actions dispatch actions for google login 1`] = `ShallowWrapper {}`;
+
+exports[`Social Actions dispatch actions for google login 2`] = `ShallowWrapper {}`;

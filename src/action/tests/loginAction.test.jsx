@@ -36,7 +36,7 @@ describe("Login actions", () => {
 
 describe('create signin failure', () => {
   it('should create an unsuccessful create user login action', () => {
-      const error = { eror: 'username doesnot exist' };
+      const error = { error: 'username doesnot exist' };
       const expectedAction = {
           type: LOGIN_FAIL,
           error: error,
