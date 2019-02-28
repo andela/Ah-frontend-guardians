@@ -3,7 +3,7 @@ import SocialAuthView from '../../../views/SocialLoginView/SocialLoginView';
 
 const Form = props => {
   const propErrors = props.errors.errors;
-
+  console.log(propErrors);
   return (
     <div className='row justify-content-center'>
       <div className='col-md-4'>

@@ -10,6 +10,8 @@ const facebookLoginAction = accessToken => dispatch => {
       }
     )
     .then(res => {
+      window.localStorage.setItem('token', res.data.user.token);
+      window.localStorage.setItem('username', res.data.user.username)
       dispatch({
         type: actionTypes.FACEBOOK_SUCCESS,
         payload: res.data,

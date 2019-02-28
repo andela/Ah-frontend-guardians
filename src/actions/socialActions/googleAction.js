@@ -10,7 +10,8 @@ const googleLoginAction = (tokenId) =>{
         access_token: tokenId
       }
     ).then(res => {
-      
+      window.localStorage.setItem('token', res.data.user.token);
+      window.localStorage.setItem('username', res.data.user.username)
       dispatch({
         type: actionTypes.GOOGLE_SUCCESS,
         payload: res.data,
