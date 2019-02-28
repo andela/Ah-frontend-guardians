@@ -36,14 +36,14 @@ const Form = props => {
               {propErrors ? props.errors.errors.password : ''}
             </p>
             <button type="submit" className="form_button">Login</button>
+            <a id="forgot-password-link" href="/reset-email">Forgot password?</a>
             <p className="social_media_login">or Login with your social Media</p>
             <div>
               <SocialAuthView />
             </div>
             <p className="social_media_login"> Don't have an account, <font color="red"><a href='/signup' id = "register_link">Register</a></font></p>
-
+            
           </form>
-      <a className="forgot-password-link" href="/reset-email">Forgot password?</a>
 
 
         </div>

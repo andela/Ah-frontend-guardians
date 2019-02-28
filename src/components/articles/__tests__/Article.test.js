@@ -15,17 +15,6 @@ describe('Fetch Article', () => {
   afterEach(() => {
     mockFetch.mock.calls = [];
   });
-  it('should have an h2 element', () => {
-    const wrapper = shallow(<Article {...props}/>)
-
-    expect(wrapper.find('h2').length).toEqual(1)
-    expect(wrapper).toMatchSnapshot()
-  })
-  it('should render without crashing', () => {
-    const wrapper = shallow(<Article {...props}/>)
-
-    expect(wrapper).toMatchSnapshot()
-  })
   it('should return article state', () => {
     const wrapper = shallow(
       <Article {...props}

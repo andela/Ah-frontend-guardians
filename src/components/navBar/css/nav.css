@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+
+.nav{
+    height: 67px;
+    background: #25ABD1;
+}
+
 #nav-bar{
     position: absolute;
     width: 100%;
-    height: 67px;
     left: 0px;
     top: 0px;
-    background: #25ABD1;
 }
   
 .nav-links a {

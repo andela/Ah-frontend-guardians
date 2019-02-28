@@ -75,6 +75,8 @@ export class CreateArticle extends React.PureComponent {
         <NavBar {...this.props} />
         <div id="articleform">
           <form onSubmit={this.handleCreate}>
+          <div id="wholeDiv">
+          <div id="createArticlesection">
             <div>
               <input
                 name="title"
@@ -104,18 +106,21 @@ export class CreateArticle extends React.PureComponent {
                 onChange={this.handleChange}
               />
             </div>
+            </div>
 
-            <div>
+            <div id="tagAndButton">
               <TagsInput
                 value={this.state.tags}
                 name="tag"
                 onChange={this.handleChangeTag}
                 id="react-tagsinput"
               />
-            </div>
-            <button type="submit" id="post">
+              <button type="submit" id="post">
               Publish
             </button>
+            </div>
+            </div>
+            
           </form>
           <ToastContainer />
         </div>
