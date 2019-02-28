@@ -6,16 +6,8 @@ import signupReducer from './signup/signUpReducer'
 import socialReducer from './socialReducer/socialReducer';
 import profileReducer from './profileReducer/profileReducer'
 import errorReducer from "./ErrorReducer";
-
-const InitialState = {
-  start: false
-};
-
-export function startReducer (state = InitialState) {
-
-  return state;
-
-}
+import { resetEmailReducer } from './resetEmailReducer';
+import { resetPasswordReducer } from './resetPasswordReducer';
 
 const mainReducer = combineReducers({
   signin: loginReducer,
@@ -25,6 +17,8 @@ const mainReducer = combineReducers({
   social: socialReducer,
   profileReducer,
   errorReducer,
+  resetEmailReducer,
+  resetPasswordReducer
 });
 export default mainReducer;
 

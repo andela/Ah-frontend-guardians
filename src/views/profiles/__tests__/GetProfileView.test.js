@@ -22,7 +22,6 @@ describe('GetProfileView', () => {
         .find('GetProfile')
         .dive()
         .find('#username');
-      console.log(wrapper);
       expect(getProfile.mock.calls.length).toBe(1);
     });
   });

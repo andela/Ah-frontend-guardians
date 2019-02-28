@@ -60,10 +60,4 @@ describe('Social Authentication Reducer', () => {
       payload: ''
     });
   });
-
-  it('should return the initial state of start reducer', () => {
-    expect(startReducer(undefined, {})).toEqual({
-      start: false
-    });
-  });
 });
