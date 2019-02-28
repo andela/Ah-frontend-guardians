@@ -4,15 +4,19 @@ import loginReducer from './loginReducer';
 import { bookmarkReducer, createBookmarkReducer } from './bookmark/bookmarkReducer'
 import likeArticleReducer from './likeArticle/likeArticleReducer';
 import navBarReducer from './navBarReducer';
-import signupReducer from './signup/signUpReducer'
+import signupReducer from './signup/signUpReducer';
 import socialReducer from './socialReducer/socialReducer';
 import profileReducer from './profileReducer/profileReducer'
 import errorReducer from "./ErrorReducer";
 import { resetEmailReducer } from './resetEmailReducer';
 import { resetPasswordReducer } from './resetPasswordReducer';
 import ratingsReducer from './ratingsReducer/ratingsReducer';
+import userFollowReducer from '../reducers/userFollowReducer/userFollowReducer';
 
 
+export function startReducer(state = InitialState) {
+  return state;
+}
 
 const mainReducer = combineReducers({
   signin: loginReducer,
@@ -27,6 +31,7 @@ const mainReducer = combineReducers({
   bookmark: bookmarkReducer,
   bookmarks: createBookmarkReducer,
   likeArticleReducer,
-  ratingsReducer
+  ratingsReducer,
+  follow: userFollowReducer
 });
 export default mainReducer;
