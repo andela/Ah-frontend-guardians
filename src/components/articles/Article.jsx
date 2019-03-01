@@ -5,7 +5,9 @@ import { getSingleDataThunk } from '../../actions/ArticleActionCreator';
 import { NavBar } from '../navBar/NavBar';
 import Footer from '../Footer/Footer';
 import renderHTML from 'react-render-html';
-
+import PostComent from '../../components/views/commentsView/postComent'
+import Bookmark from '../Bookmark/Bookmark'
+import GetComments from '../views/commentsView/CommentGetView'
 export class Article extends Component {
   componentDidMount() {
     if (this.props.match) {
@@ -19,6 +21,9 @@ export class Article extends Component {
   }
 
   render() {
+    console.log(this.props.match.params.slug, "PROPSSSSSSS");
+    console.log(this.props, "props Articles");
+    
     if (this.props.articleReducer.article === undefined) return <div />;
     const {
       article: {
@@ -41,20 +46,22 @@ export class Article extends Component {
         <div id="singleArticle">
           <div id="authorColor">{author && author.username}</div>
 
-          <div id="articleReadTime">{read_time + ' min read'}</div>
+          <div id="articleReadTime">{read_time + ' mins read'}</div>
           <div id="contentA">
             <div>
-              <h2>{title}</h2>
+              <h2></h2>
             </div>
             <div>
               <h5>{description}</h5>
             </div>
             <div id="bodycolor">{renderHTML(body)}</div> <br />
-            
-          </div><br/>
-          <div id="tagstyle" className="btn btn-primary">{tags}</div>
-        </div>
-        <Footer />
+          </div><br />
+          <div><PostComent slug={this.props.match.params.slug}/></div>
+         <div> <GetComments slug={this.props.match.params.slug} /></div>
+
+          <div className="middle"><div id="tagstyle" className="btn btn-primary">{tags}</div><Bookmark slug={slug} /></div>        </div>
+          
+          {/* <Footer /> */}
       </div>
     );
   }

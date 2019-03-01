@@ -1,6 +1,5 @@
 import socialReducer from '../socialReducer';
 import actionTypes from '../../../actions/actionTypes';
-import { startReducer } from '../../mainReducer';
 
 const initialState = {
   isAuthenticated: false,

@@ -23,7 +23,7 @@ const getDataThunk = () => (dispatch) => {
     .catch((error) => {
       dispatch(errorOccurred(error));
     });
-  }
+}
 const getSingleDataThunk = slug => (dispatch) => {
   axios
     .get(
@@ -31,7 +31,6 @@ const getSingleDataThunk = slug => (dispatch) => {
       { headers }
     )
     .then((response) => {
-      console.log('action creator', response.data.article);
       dispatch({
         type: GET_ARTICLE,
         article: response.data.article
