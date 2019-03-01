@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getSingleDataThunk } from '../../actions/ArticleActionCreator';
 import { NavBar } from '../navBar/NavBar';
 import Footer from '../Footer/Footer';
+import renderHTML from 'react-render-html';
 
 export class Article extends Component {
   componentDidMount() {
@@ -48,9 +49,10 @@ export class Article extends Component {
             <div>
               <h5>{description}</h5>
             </div>
-            <div>{body}</div> <br />
-            <div id="tagstyle" className="btn btn-primary">{tags}</div>
-          </div>
+            <div id="bodycolor">{renderHTML(body)}</div> <br />
+            
+          </div><br/>
+          <div id="tagstyle" className="btn btn-primary">{tags}</div>
         </div>
         <Footer />
       </div>

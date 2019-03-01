@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Fetch Article should have an h2 element 1`] = `ShallowWrapper {}`;
-
-exports[`Fetch Article should render without crashing 1`] = `ShallowWrapper {}`;

@@ -33,7 +33,7 @@ export class ResetPassword extends Component {
 
     render() {
         return (
-        <div className="reset-email">
+        <div className="reset-email reset">
             <a href="/"><h1>Author's Haven</h1></a>
             <p>Enter your new password</p>
             <div className="reset-email-div">
