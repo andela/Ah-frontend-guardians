@@ -34,21 +34,22 @@ export class HomeView extends Component {
 
     return (
       <div>
+      <div>
         <NavBar />
+      </div>
         <section
           className="showbiz"
-          style={{ backgroundImage: `url(${defaultImage})`, height: 271 }}
+          style={{ backgroundPosition: 'inherit', backgroundImage: `url(${defaultImage})`, height: 271 }}
         >
-          <div id="textOverlay" className="container mt-10">
-            <div className="row">
-              <div className="col mt-5 welocme_msg">
-                <h2 id="welcome_header">Author's Haven </h2>
-                <br />
-                Home to Authors and readers alike <br />
-                Are you a Author ? Write what you think <br /> Are you a Reader? Read what yopu like
-              </div>
-              <div className="col">
-                <button
+        <div id="textOverlay">
+            <div>
+             <p> <h2 id="welcome_header">Author's Haven </h2><br/> Home to Authors and readers alike <br />
+                Are you a Author ? Write what you think <br /> Are you a Reader? Read what yopu like  </p>
+
+            </div>
+
+            <div>
+              <p> <button
                   className="btn btn-primary float-right mt-5"
                   type="button"
                   id="createArticleButton"
@@ -56,10 +57,11 @@ export class HomeView extends Component {
                 >
                   {' '}
                   Create an article{' '}
-                </button>
-              </div>
-            </div>
-          </div>
+                </button>  </p>
+
+             </div>
+
+        </div>
         </section>
         <div>{goToArticles ? <ArticleView {...articlesProps} /> : <Home {...homeProps} />}</div>
         <Footer />

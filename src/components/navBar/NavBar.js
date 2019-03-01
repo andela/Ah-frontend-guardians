@@ -19,9 +19,14 @@ export class NavBar extends Component {
             <span>
               {this.props.signin.success ||
               this.props.social.isAuthenticated ? (
+                <span>
+                <NavLink to='/login' onClick={() => localStorage.removeItem('token')}>
+                  Logout
+                </NavLink>
                 <NavLink to='/profile' id='avatar'>
                   <i className='fas fa-user-circle fa-2x' />
                 </NavLink>
+                </span>
               ) : (
                 <span className='auth-links'>
                   <NavLink to='/login'>Signin</NavLink>

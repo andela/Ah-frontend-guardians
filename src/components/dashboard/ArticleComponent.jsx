@@ -14,11 +14,11 @@ export const Article = (props) => {
       <div className="article-box welocme_msg">
         <div>
           {' '}
-          <img id="articleImage" src={default_image} width="300" height="150" />
+          <img id="articleImage" src={default_image} width="300" />
         </div>
         <div id="cont">
-          <h3>{props.article && props.article.title}</h3>
-          <p className="text-dark">
+          <h3 style={{ fontWeight: "bold" }}>{props.article && props.article.title}</h3>
+          <p  className="text-dark">
             {props.article && props.article.description.substring(0, 50) + '...'}
           </p>
           <div>
