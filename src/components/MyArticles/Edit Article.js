@@ -33,9 +33,9 @@ export class Articles extends Component {
   }
 
   componentWillMount() {
-    const slug = this.props.match.params.slug
+    const slug = this.props.match.params.slug;
 
-    const article = this.props.article.filter((article) => article.slug === slug);
+    const article = this.props.article.filter(article => article.slug === slug);
 
     this.setState({
       title: article[0].title,
@@ -77,59 +77,61 @@ export class Articles extends Component {
   render() {
     return (
       <div>
-        <NavBar {...this.props}/>
-      <div className="container py-2 editparent">
-        <form id="editForm" className="form" onSubmit={this.handleSubmit}>
-          <p className="form-elements">Title:</p>
-          <input
-            id="title"
-            type="text"
-            name="title"
-            placeholder="Title"
-            onChange={this.handleChange}
-            value={this.state.title}
-          />
-          <p className="form-elements">Description:</p>
-          <input
-            id="description"
-            type="text"
-            name="description"
-            placeholder="Description"
-            onChange={this.handleChange}
-            value={this.state.description}
-          />
-          <ReactQuill
-            id="body"
-            className="body"
-            name="body"
-            placeholder="Body"
-            value={this.state.body}
-            onChange={this.handleQuilChange.bind(this)}
-          />
-          <TagsInput
-            id="tags"
-            value={this.state.tags}
-            onChange={this.handleTagsChange}
-          />
-          <input
-            className="save-changes-btn btn"
-            type="submit"
-            name="submit"
-            value="Save Changes"
-          />
-        </form>
-      </div>
-      <Footer className="foot" />
+        <NavBar {...this.props} />
+        <div className="container py-2 editparent">
+          <form id="editForm" className="form" onSubmit={this.handleSubmit}>
+            <p className="form-elements">Title:</p>
+            <input
+              id="title"
+              type="text"
+              name="title"
+              placeholder="Title"
+              onChange={this.handleChange}
+              value={this.state.title}
+            />
+            <p className="form-elements">Description:</p>
+            <input
+              id="description"
+              type="text"
+              name="description"
+              placeholder="Description"
+              onChange={this.handleChange}
+              value={this.state.description}
+            />
+            <ReactQuill
+              id="body"
+              className="body"
+              name="body"
+              placeholder="Body"
+              value={this.state.body}
+              onChange={this.handleQuilChange.bind(this)}
+            />
+            <span>
+              <TagsInput
+                id="tags"
+                value={this.state.tags}
+                onChange={this.handleTagsChange}
+              />
+              <input
+                className="save-changes-btn btn"
+                type="submit"
+                name="submit"
+                value="Save Changes"
+              />
+            </span>
+          </form>
+        </div>
+        <Footer className="foot" />
       </div>
     );
   }
 }
 
-export const mapStateToProps = (state) => ({
-    edit_article: state.articleReducer.edit_article,
-    article: state.articleReducer.my_articles,
-    signin: state.signin
-  });
+export const mapStateToProps = state => ({
+  edit_article: state.articleReducer.edit_article,
+  article: state.articleReducer.my_articles,
+  signin: state.signin
+});
 
 export default connect(
   mapStateToProps,

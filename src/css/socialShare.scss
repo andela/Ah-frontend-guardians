@@ -1,0 +1,32 @@
+@keyframes socialShareAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.social-share {
+    .social-share-btn {
+        height: 50px;
+        line-height: 50px;
+        padding: 0px 25px;
+        background: #26abd1;
+        border: 0;
+        border-radius: 13px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .close {
+        display: none;
+        opacity: 0;
+    }
+    .open {
+        display: block;
+        opacity: 1;
+        animation: socialShareAnimation 1s;
+    }
+    i {
+        font-size: 50px;
+        color: #666;
+        margin: 0px 10px;
+    }
+
+}
