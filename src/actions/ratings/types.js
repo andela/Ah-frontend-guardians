@@ -1,0 +1,3 @@
+export const EDIT_RATING = 'EDIT_RATING';
+export const VIEW_RATING = 'VIEW_RATING';
+export const EDIT_RATING_FAILURE = 'EDIT_RATING_FAILURE';

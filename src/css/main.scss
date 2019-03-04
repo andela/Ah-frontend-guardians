@@ -39,7 +39,34 @@ label {
   background-color: $colour;
 }
 
-// p {
-//   color: $color-alert;
-//   font-size: 12px;
-// }
+.dv-star-rating-star.dv-star-rating-empty-star {
+  padding-right: 1rem;
+}
+
+.dv-star-rating-star.dv-star-rating-full-star {
+  padding-right: 1rem;
+}
+
+.dv-star-rating-star.dv-star-rating-empty-star i {
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: -1px 0 #25abd1, 0 1px #25abd1, 1px 0 #25abd1, 0 -1px #25abd1;
+}
+
+.dv-star-rating-star.dv-star-rating-full-star i {
+  font-size: 1.5rem;
+  color: #25abd1;
+}
+
+.ratings-view {
+  padding-left: 60%;
+}
+
+.dv-star-rating-star.dv-star-rating-empty-star i:hover::before {
+  color: #000000;
+  content: 'you can only rate once';
+  font-size: 12px;
+  margin-top: 45px;
+  position: absolute;
+  white-space: nowrap;
+}

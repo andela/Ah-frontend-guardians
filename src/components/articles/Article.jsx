@@ -7,7 +7,9 @@ import Footer from '../Footer/Footer';
 import renderHTML from 'react-render-html';
 import LikeArticle from '../LikeArticle/LikeArticle';
 
-import Bookmark from '../Bookmark/Bookmark'
+import Bookmark from '../Bookmark/Bookmark';
+import EditRatingsView from '../../views/ratings/EditRatingsView';
+
 export class Article extends Component {
   componentDidMount() {
     if (this.props.match) {
@@ -59,6 +61,9 @@ export class Article extends Component {
           <div className="middle">
           <div id="likes">
             <LikeArticle slug={slug}  />
+          </div>
+          <div className="ratings-view">
+              <EditRatingsView slug={slug} />
           </div>
           <Bookmark slug={slug} />
           </div>
