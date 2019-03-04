@@ -5,6 +5,7 @@ import { getSingleDataThunk } from '../../actions/ArticleActionCreator';
 import { NavBar } from '../navBar/NavBar';
 import Footer from '../Footer/Footer';
 import renderHTML from 'react-render-html';
+import LikeArticle from '../LikeArticle/LikeArticle';
 
 import Bookmark from '../Bookmark/Bookmark'
 export class Article extends Component {
@@ -32,7 +33,9 @@ export class Article extends Component {
         created_at,
         updated_at,
         tags,
-        image_url
+        image_url,
+        likes_count,
+        dislikes_count
       }
     } = this.props.articleReducer;
 
@@ -53,7 +56,16 @@ export class Article extends Component {
             <div id="bodycolor">{renderHTML(body)}</div> <br />
 
           </div><br />
-          <div className="middle"><div id="tagstyle" className="btn btn-primary">{tags}</div><Bookmark slug={slug} /></div>        </div>
+          <div className="middle">
+          <div id="likes">
+            <LikeArticle slug={slug}  />
+          </div>
+          <Bookmark slug={slug} />
+          </div>
+          <div id="tagstyle" className="btn btn-primary">{tags}
+        </div>
+          </div>
+          
         <Footer />
       </div>
     );
@@ -71,7 +83,9 @@ Article.propTypes = {
     author: PropTypes.shape({
       username: PropTypes.string,
       email: PropTypes.string
-    })
+    }),
+    likes_count: PropTypes.string,
+    dislikes_count: PropTypes.string
   })
 };
 Article.defaultProps = {
@@ -83,7 +97,9 @@ Article.defaultProps = {
     created_at: '',
     updated_at: '',
     image_url: null,
-    author: { username: '', email: '' }
+    author: { username: '', email: '' },
+    likes_count: '',
+    dislikes_count: ''
   }
 };
 export const mapStateToProps = state => state;

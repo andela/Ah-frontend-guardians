@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import articleReducer from './articleReducers/articleReducer';
 import loginReducer from './loginReducer';
 import { bookmarkReducer, createBookmarkReducer } from './bookmark/bookmarkReducer'
+import likeArticleReducer from './likeArticle/likeArticleReducer';
 import navBarReducer from './navBarReducer';
 import signupReducer from './signup/signUpReducer'
 import socialReducer from './socialReducer/socialReducer';
@@ -22,6 +23,6 @@ const mainReducer = combineReducers({
   resetPasswordReducer,
   bookmark: bookmarkReducer,
   bookmarks: createBookmarkReducer,
+  likeArticleReducer
 });
-
 export default mainReducer;
