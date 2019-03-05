@@ -1,5 +1,6 @@
 const initialState = {
-    bookmarked: null
+    bookmarked: null,
+    payload: null
 }
 
 export const bookmarkReducer = (state = initialState, action) => {
@@ -7,8 +8,8 @@ export const bookmarkReducer = (state = initialState, action) => {
         case 'FETCH_BOOKMARK_SUCCESS':
             return {
                 ...state,
+                bookmark: action.payload,
                 bookmarked: true,
-                bookmark: action.bookmark
             };
         case 'FETCH_BOOKMARK_FAILURE':
             return {
@@ -21,12 +22,17 @@ export const bookmarkReducer = (state = initialState, action) => {
 }
 
 
-export const createBookmarkReducer = (state = [], action) => {
+export const createBookmarkReducer = (state = {}, action) => {
     switch (action.type) {
         case 'CREATE_BOOKMARK_SUCCESS':
             return {
                 ...state,
                 bookmarked: true,
+            };
+        case 'CREATE_BOOKMARK_FAILURE':
+            return {
+                ...state,
+                bookmarked: false,
             };
         case 'DELETE_BOOKMARK_SUCCESS':
             return {

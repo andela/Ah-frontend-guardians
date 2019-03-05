@@ -1,6 +1,8 @@
 import axios from "axios";
-import { BASE_URL, token } from "../index";
+import { BASE_URL } from "../index";
 import { toast } from "react-toastify";
+
+const token = localStorage.getItem('token');
 
 const headers = {
     "Content-Type": "application/json",
@@ -12,12 +14,12 @@ export const getBookmark = slug => (dispatch) => {
         .then((response) => {
             dispatch({
                 type: 'FETCH_BOOKMARK_SUCCESS',
-                bookmark: response.data
-
+                payload: response.data
             });
         }).catch((error) => {
             dispatch({
                 type: 'FETCH_BOOKMARK_FAILURE',
+                payload: error.response.data
             });
         })
 }
@@ -26,14 +28,13 @@ export const createBookmark = slug => dispatch => axios.post(`${BASE_URL}article
     .then((response) => {
         dispatch({
             type: 'CREATE_BOOKMARK_SUCCESS',
-            bookmark: response.data
+            payload: response.data
         });
     }).catch((error) => {
         dispatch({
             type: 'CREATE_BOOKMARK_FAILURE',
+            payload: error.response.data
         });
-
-        toast.error("You have to login to bookmark an article");
     })
 
 export const deleteBookmark = slug => (dispatch) => {
@@ -41,11 +42,12 @@ export const deleteBookmark = slug => (dispatch) => {
         .then((response) => {
             dispatch({
                 type: 'DELETE_BOOKMARK_SUCCESS',
-                slug,
+                payload: slug,
             });
         }).catch((error) => {
             dispatch({
                 type: 'DELETE_BOOKMARK_FAILURE',
+                payload: error.response.data
             });
         })
 }
