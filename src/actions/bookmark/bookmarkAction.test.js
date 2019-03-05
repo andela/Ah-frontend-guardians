@@ -18,7 +18,7 @@ describe('getBookmark', () => {
         mockAxios.get.mockImplementationOnce(() => Promise.resolve({ data: bookmark }))
 
         const expectedActions = [
-            { type: 'FETCH_BOOKMARK_SUCCESS', bookmark },
+            { type: 'FETCH_BOOKMARK_SUCCESS', payload: bookmark },
         ]
 
         await store.dispatch(getBookmark('mockSlug'))
@@ -58,7 +58,7 @@ describe('createBoomark', () => {
         mockAxios.post.mockImplementationOnce(() => Promise.resolve({ data: bookmark.bookmark }))
 
         const expectedActions = [
-            { type: 'CREATE_BOOKMARK_SUCCESS', bookmark: bookmark.bookmark },
+            { type: 'CREATE_BOOKMARK_SUCCESS', payload: bookmark.bookmark },
         ]
 
         await store.dispatch(createBookmark('mock_Slug'))
@@ -91,7 +91,7 @@ describe('createBoomark', () => {
         mockAxios.delete.mockImplementationOnce(() => Promise.resolve({ data: 'you have delete' }))
 
         const expectedActions = [
-            { type: 'DELETE_BOOKMARK_SUCCESS', slug: 'mock_Slug' },
+            { type: 'DELETE_BOOKMARK_SUCCESS', payload: 'mock_Slug' },
         ]
 
         await store.dispatch(deleteBookmark('mock_Slug'))

@@ -29,7 +29,8 @@ describe('bookmarkReducer', () => {
     })
     it('should return initial state with no action', () => {
         expect(bookmarkReducer(undefined, {})).toEqual({
-            bookmarked: null
+            bookmarked: null,
+            payload: null
         })
     })
 })
@@ -62,9 +63,9 @@ describe('createBookmarkReducer', () => {
 
         const newState = createBookmarkReducer([], action)
 
-        expect(newState).toEqual([])
+        expect(newState).toEqual({ "bookmarked": false })
     })
     it('should return initial state with no action', () => {
-        expect(createBookmarkReducer(undefined, [])).toEqual([])
+        expect(createBookmarkReducer(undefined, [])).toEqual({})
     })
 })
