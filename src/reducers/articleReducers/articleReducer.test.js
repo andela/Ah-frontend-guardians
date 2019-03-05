@@ -69,11 +69,13 @@ describe('create myarticles success', () => {
 
     const action = {
       type: 'GET_ALL_ARTICLES',
-      articles: [
-        {
-          title: 'title 1'
-        }
-      ]
+      articles: {
+        results: [
+          {
+            title: 'title 1'
+          }
+        ]
+      }
     };
 
     const newState = articleReducer(state, action);

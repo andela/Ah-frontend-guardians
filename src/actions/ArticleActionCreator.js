@@ -9,15 +9,33 @@ const headers = {
   "Content-Type": "application/json"
 };
 
+const getPages = (url) => (dispatch) => {
+  axios
+    .get(
+      url
+    )
+    .then((res) => {
+      console.log(res.data)
+      dispatch({
+        type: GET_ALL_ARTICLES,
+        articles: res.data.articles
+      });
+    })
+    .catch((error) => {
+      dispatch(errorOccurred(error));
+    });
+}
+
 const getDataThunk = () => (dispatch) => {
   axios
     .get(
       'https://ah-backend-guardians-staging.herokuapp.com/api/articles/?limit=6'
     )
     .then((res) => {
+      console.log(res.data)
       dispatch({
         type: GET_ALL_ARTICLES,
-        articles: res.data.articles.results
+        articles: res.data.articles
       });
     })
     .catch((error) => {
@@ -53,5 +71,6 @@ export {
   errorOccurred,
   doNothing,
   getDataThunk,
+  getPages,
   getSingleDataThunk
 };

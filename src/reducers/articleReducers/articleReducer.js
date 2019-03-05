@@ -42,7 +42,9 @@ export default function (state = initialState, action) {
     case GET_ALL_ARTICLES:
       return {
         ...state,
-        articles: action.articles
+        articles: action.articles.results,
+        previous: action.articles.previous,
+        next: action.articles.next,
       };
       case SEARCH_ARTICLE:
       return {

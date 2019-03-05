@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getSingleDataThunk } from '../../actions/ArticleActionCreator';
 import { NavBar } from '../navBar/NavBar';
-import Footer from '../Footer/Footer';
 import renderHTML from 'react-render-html';
 import LikeArticle from '../LikeArticle/LikeArticle';
-
 import Bookmark from '../Bookmark/Bookmark';
 import EditRatingsView from '../../views/ratings/EditRatingsView';
 
@@ -26,21 +24,13 @@ export class Article extends Component {
   render() {
     if (this.props.articleReducer.article === undefined) return <div />;
     const {
-      article: {
-        author,
-        title,
-        body,
-        description,
-        read_time,
-        slug,
-        created_at,
-        updated_at,
-        tags,
-        image_url,
-        likes_count,
-        dislikes_count
-      }
+      article: { author, title, body, description, read_time, slug, tags }
     } = this.props.articleReducer;
+    const tagList = tags.map(tag => (
+      <div id="tagstyle" className="btn tagsArticle">
+        {tag}
+      </div>
+    ));
 
     return (
       <div>
@@ -61,24 +51,19 @@ export class Article extends Component {
             </div>
             
             <div id="bodycolor">{renderHTML(body)}</div> <br />
-            
-
-          </div><br />
+          </div>
+          <br />
           <div className="middle">
-          <div id="likes">
-            <LikeArticle slug={slug}  />
-          </div>
-          <div className="ratings-view">
+            <div id="likes">
+              <LikeArticle slug={slug} />
+            </div>
+            <div className="ratings-view">
               <EditRatingsView slug={slug} />
+            </div>
+            <Bookmark slug={slug} />
           </div>
-          <Bookmark slug={slug} />
-          
-          </div>
-          <div id="tagstyle" className="btn btn-primary">{tags}
+          {tagList}
         </div>
-          </div>
-          
-        <Footer />
       </div>
     );
   }
