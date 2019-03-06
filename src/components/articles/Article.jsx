@@ -10,6 +10,7 @@ import LikeArticle from '../LikeArticle/LikeArticle';
 import Bookmark from '../Bookmark/Bookmark';
 import EditRatingsView from '../../views/ratings/EditRatingsView';
 
+import SocialShare from '../SocialSharing/socialSharing';
 export class Article extends Component {
   componentDidMount() {
     if (this.props.match) {
@@ -44,10 +45,13 @@ export class Article extends Component {
     return (
       <div>
         <NavBar {...this.props} />
+        <SocialShare/>
         <div id="singleArticle">
           <div id="authorColor">{author && author.username}</div>
 
+          
           <div id="articleReadTime">{read_time + ' mins read'}</div>
+          {/* <SocialShare/> */}
           <div id="contentA">
             <div>
               <h2>{title}</h2>
@@ -55,7 +59,9 @@ export class Article extends Component {
             <div>
               <h5>{description}</h5>
             </div>
+            
             <div id="bodycolor">{renderHTML(body)}</div> <br />
+            
 
           </div><br />
           <div className="middle">
@@ -66,6 +72,7 @@ export class Article extends Component {
               <EditRatingsView slug={slug} />
           </div>
           <Bookmark slug={slug} />
+          
           </div>
           <div id="tagstyle" className="btn btn-primary">{tags}
         </div>
