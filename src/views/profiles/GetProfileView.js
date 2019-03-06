@@ -23,7 +23,7 @@ export class GetProfileView extends React.Component {
           <GetProfile profile={this.props.profile} />
         </div>
         <div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     );
