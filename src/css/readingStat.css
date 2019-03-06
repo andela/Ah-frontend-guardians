@@ -1,0 +1,24 @@
+.readingStatCard {
+    background: #ffffff;
+    border: 1px solid #25abd1;
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+.readingStatsParent {
+    background: #ffffff;
+}
+
+.readingStatsReadTime {
+    font-size: 120%;
+}
+
+.readingStatsCenter {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.readingStatsContent {
+    padding-left: 1.5rem;
+    padding-bottom: 2rem;
+}

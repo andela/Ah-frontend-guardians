@@ -11,6 +11,7 @@ import errorReducer from "./ErrorReducer";
 import { resetEmailReducer } from './resetEmailReducer';
 import { resetPasswordReducer } from './resetPasswordReducer';
 import ratingsReducer from './ratingsReducer/ratingsReducer';
+import readingStatsReducer from './readingStatsReducer/readingStatsReducer';
 
 
 
@@ -27,6 +28,7 @@ const mainReducer = combineReducers({
   bookmark: bookmarkReducer,
   bookmarks: createBookmarkReducer,
   likeArticleReducer,
-  ratingsReducer
+  ratingsReducer,
+  readingStatsReducer
 });
 export default mainReducer;

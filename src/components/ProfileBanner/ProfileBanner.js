@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MyArticles from "../MyArticles/MyArticles";
+import ReadingStats from "../ReadingStats/ReadingStats";
 
 export class Banner extends Component {
   constructor(props) {
@@ -7,7 +8,8 @@ export class Banner extends Component {
     this.state = {
       article: true,
       bookmark: false,
-      favourites: false
+      favourites: false,
+      readingstats: false
     };
   }
 
@@ -15,7 +17,8 @@ export class Banner extends Component {
     this.setState({
       article: false,
       bookmark: false,
-      favourites: false
+      favourites: false,
+      readingstats: false
     });
     this.setState({
       [e.target.id]: true
@@ -29,20 +32,28 @@ export class Banner extends Component {
           <span id="article" onClick={this.handleClick.bind(this)}>
             Articles
           </span>
-          &nbsp;&nbsp;&nbsp;
-          <span id="bookmark" onClick={this.handleClick.bind(this)}>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <span id="bookmarks" onClick={this.handleClick.bind(this)}>
             Bookmarks
           </span>
-          &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <span id="favourites" onClick={this.handleClick.bind(this)}>
             Favourites
+          </span>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <span id="readingstats" onClick={this.handleClick.bind(this)}>
+            Statistics
           </span>
         </div>
         <div hidden={!this.state.article}>
           <MyArticles />
         </div>
-        <div hidden={!this.state.bookmark} />
+        <div hidden={!this.state.bookmark} >
+        </div>
         <div hidden={!this.state.favourites} />
+        <div hidden={!this.state.readingstats} >
+          <ReadingStats />
+        </div>
       </div>
     );
   }
