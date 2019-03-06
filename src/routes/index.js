@@ -14,6 +14,7 @@ import CreateArticle from '../components/articles/CreateArticle';
 import { Article } from "../components/articles";
 import ResetEmail from '../components/resetPassword/resetEmail';
 import ResetPassword from '../components/resetPassword/resetPassword';
+import MyBookmarks from '../components/MyBookmarks/MyBookmarks';
 
 const Routes = () => (
   <div>
@@ -31,6 +32,7 @@ const Routes = () => (
         <Route exact path="/rating" component={EditRatingsView} />
         <ToastContainer />
         <Route path="/reset-email" component={ResetEmail} />
+        <Route exact path="/bookmarks" component={MyBookmarks} />
         <Route path="/reset-password/:slug" component={ResetPassword} />
       </div>
     </Router>

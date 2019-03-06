@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import MyArticles from "../MyArticles/MyArticles";
 import ReadingStats from "../ReadingStats/ReadingStats";
 
+import MyBookmarks from "../MyBookmarks/MyBookmarks";
 export class Banner extends Component {
   constructor(props) {
     super(props);
     this.state = {
       article: true,
-      bookmark: false,
+      bookmarks: false,
       favourites: false,
       readingstats: false
     };
@@ -16,7 +17,7 @@ export class Banner extends Component {
   handleClick(e) {
     this.setState({
       article: false,
-      bookmark: false,
+      bookmarks: false,
       favourites: false,
       readingstats: false
     });
@@ -29,26 +30,27 @@ export class Banner extends Component {
     return (
       <div id="parent" className="container">
         <div className="banner">
-          <span id="article" onClick={this.handleClick.bind(this)}>
+          <span id="article" style={{ color: this.state.article ? 'red' : '#25abd1' }} onClick={this.handleClick.bind(this)}>
             Articles
           </span>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <span id="bookmarks" onClick={this.handleClick.bind(this)}>
+          <span id="bookmarks" style={{ color: this.state.bookmarks ? 'red' : '#25abd1' }} onClick={this.handleClick.bind(this)}>
             Bookmarks
           </span>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <span id="favourites" onClick={this.handleClick.bind(this)}>
+          <span id="favourites" style={{ color: this.state.favourites ? 'red' : '#25abd1' }} onClick={this.handleClick.bind(this)}>
             Favourites
           </span>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <span id="readingstats" onClick={this.handleClick.bind(this)}>
+          <span id="readingstats" style={{ color: this.state.readingstats ? 'red' : '#25abd1' }} onClick={this.handleClick.bind(this)}>
             Statistics
           </span>
         </div>
         <div hidden={!this.state.article}>
           <MyArticles />
         </div>
-        <div hidden={!this.state.bookmark} >
+        <div hidden={!this.state.bookmarks} >
+          <MyBookmarks />
         </div>
         <div hidden={!this.state.favourites} />
         <div hidden={!this.state.readingstats} >

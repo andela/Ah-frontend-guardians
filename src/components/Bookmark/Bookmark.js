@@ -34,7 +34,7 @@ export class Bookmark extends Component {
     render() {
         return (
             <div>
-                <i id="bookmark" style={{ color: this.props.bookmark && (this.props.bookmark.bookmarked ? '#00add5' : 'white') }} onClick={this.handleBookmark} className="fas fa-bookmark fa-2x" />
+                <i id="elbookmark" style={{ color: this.props.bookmark && (this.props.bookmark.bookmarked ? '#00add5' : 'white') }} onClick={this.handleBookmark} className="fas fa-bookmark fa-2x" />
             </div>
         );
     }
