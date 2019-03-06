@@ -15,17 +15,16 @@ export class SearchArticleView extends Component {
     };
   }
 
-
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
   hanleSubmit = e => {
     e.preventDefault();
-    const test = 'I suck';
     const param = this.state.searchParam;
- 
 
     {
-      param.length > 1 ? this.props.filterArticle(param) : toast.error('Please search for an article');;
+      param.length > 1
+        ? this.props.filterArticle(param)
+        : toast.error('Please search for an article');
     }
   };
   render() {
@@ -50,7 +49,9 @@ export class SearchArticleView extends Component {
               slug={article.slug}
             />
           ))
-        ) : (  <div className="container" />)}
+        ) : (
+          <div className="container" />
+        )}
         <Footer />
       </div>
     );

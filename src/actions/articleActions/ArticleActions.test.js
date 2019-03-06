@@ -132,7 +132,7 @@ describe('Asynchronous edit my article', () => {
 });
 
 describe('Testing search', () => {
-  it('Should search', async () => {
+  it('Should search for an article', async () => {
     const middlewares = [thunk];
     const mockStore = configureMockStore(middlewares);
     const store = mockStore();
