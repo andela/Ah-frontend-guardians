@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { shallow } from 'enzyme';
 import ArticleComponent, { Article } from '../Article';
-import { mapStateToProps } from '../Article'
+import { mapStateToProps } from '../Article';
 
 const props = {
   articleReducer: {
-    article: {},
-  },
-}
+    article: {
+      tags: []
+    }
+  }
+};
 
 describe('Fetch Article', () => {
   const mockFetch = jest.fn();
@@ -17,32 +19,35 @@ describe('Fetch Article', () => {
   });
   it('should return article state', () => {
     const wrapper = shallow(
-      <Article {...props}
+      <Article
+        {...props}
         articleReducer={{}}
         match={{ params: { slug: 'asdfghjkl' } }}
         getSingleDataThunk={jest.fn()}
-      />,
+      />
     );
 
     wrapper.setProps({
       articleReducer: {
         article: {
-          body: "body",
-        },
-      },
-    })
+          body: 'body',
+          tags: []
+        }
+      }
+    });
     expect(wrapper.instance().props.articleReducer).toEqual({
-        article: {
-          body: "body",
-        },
-    })
+      article: {
+        body: 'body',
+        tags: []
+      }
+    });
   });
   it('mapStateToProps should return the right value', () => {
     const mockedState = {
-          title: "fahad",
+      title: 'fahad'
     };
     const state = mapStateToProps(mockedState);
 
     expect(state.title).toEqual('fahad');
-});
+  });
 });

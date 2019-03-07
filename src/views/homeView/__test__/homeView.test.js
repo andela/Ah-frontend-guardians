@@ -34,10 +34,16 @@ describe('HomeView', () => {
   it('should map states to props', () => {
     const mockedState = {
         articlesState: {},
+        articleReducer: {
+          next: "next",
+          previous: "previous"
+        },
         signin: true
     }
     const state = mapStateToProps(mockedState);
 
     expect(state.signin).toEqual(true);
+    expect(state.nextPage).toEqual('next');
+    expect(state.prevPage).toEqual('previous');
   });
 });

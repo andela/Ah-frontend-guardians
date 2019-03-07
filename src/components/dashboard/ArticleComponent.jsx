@@ -4,7 +4,7 @@ import moment from 'moment';
 import { NavLink } from 'react-router-dom';
 import default_image from '../../images/default_image.jpeg';
 
-export const Article = (props) => {
+export const Article = props => {
   const getPlainText = data => data.replace(/<(?:.|\n)*?>/gm, '');
   const slug = props.article && props.article.slug;
   const url = 'article/' + slug;
@@ -17,12 +17,18 @@ export const Article = (props) => {
           <img id="articleImage" src={default_image} width="300" />
         </div>
         <div id="cont">
-          <h3 style={{ fontWeight: "bold" }}>{props.article && props.article.title}</h3>
-          <p  className="text-dark">
-            {props.article && props.article.description.substring(0, 50) + '...'}
+          <h3 style={{ fontWeight: 'bold' }}>
+            {props.article && props.article.title}
+          </h3>
+          <p className="text-dark">
+            {props.article &&
+              props.article.description.substring(0, 50) + '...'}
           </p>
           <div>
-            by <font color="red">{props.article && props.article.author.username}</font>
+            by{' '}
+            <font color="red">
+              {props.article && props.article.author.username}
+            </font>
             &nbsp;| &nbsp;
             <font style={{ color: `${'#25ABD1'}` }}>
               {props.article && props.article.read_time + ' min read'}
