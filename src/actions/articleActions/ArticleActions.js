@@ -6,6 +6,7 @@ import {
   DELETE_ARTICLE_SUCCESS,
   MY_ARTICLES_SUCCESS,
   EDIT_ARTICLE_SUCCESS,
+  SEARCH_ARTICLE
 } from "./types";
 
 const headers = {
@@ -64,3 +65,24 @@ export const editArticle = (slug, payload) => dispatch => {
       });
     });
 };
+
+
+export const filterArticle = param => dispatch => {
+  const headers = {
+      'Content-type': 'application/json'
+    };
+  axios
+    .get(`${BASE_URL}articles/?search=${param}`, { headers: headers })
+    .then(response => {
+      dispatch({
+        type: SEARCH_ARTICLE,
+        payload: response.data.articles.results
+      });
+     const newData =  response.data.articles.results
+     if(newData.length === 0){
+      toast.error('No matches found')
+     }
+     
+    });
+};
+

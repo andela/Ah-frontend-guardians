@@ -1,11 +1,17 @@
 import configureMockStore from 'redux-mock-store';
 import * as type from './types';
-import { deleteArticle, editArticle, myArticles } from './ArticleActions';
+import {
+  deleteArticle,
+  editArticle,
+  myArticles,
+  filterArticle
+} from './ArticleActions';
 import 'babel-polyfill';
 import thunk from 'redux-thunk';
 import mockAxios from 'axios';
 
 jest.mock('axios');
+
 
 describe('Asynchronous get my articles', () => {
   it('should dispatch success action', async () => {
@@ -14,9 +20,13 @@ describe('Asynchronous get my articles', () => {
     const store = mockStore();
     const articles = { results: [{ title: 'title 1' }, { titlt: 'title 2' }] };
 
-    mockAxios.get.mockImplementationOnce(() => Promise.resolve({ data: articles }));
+    mockAxios.get.mockImplementationOnce(() =>
+      Promise.resolve({ data: articles })
+    );
 
-    const expectedActions = [{ type: type.MY_ARTICLES_SUCCESS, payload: articles }];
+    const expectedActions = [
+      { type: type.MY_ARTICLES_SUCCESS, payload: articles }
+    ];
 
     await store.dispatch(myArticles());
 
@@ -30,7 +40,9 @@ describe('Asynchronous get my articles', () => {
     const store = mockStore();
     const message = { articles: { message: 'my articles' } };
 
-    mockAxios.get.mockImplementationOnce(() => Promise.reject({ response: message }));
+    mockAxios.get.mockImplementationOnce(() =>
+      Promise.reject({ response: message })
+    );
 
     await store.dispatch(myArticles());
     expect(mockAxios.get).toHaveBeenCalledTimes(1);
@@ -45,9 +57,13 @@ describe('Asynchronous delete my article', () => {
     const message = { articles: { message: 'Article is deleted' } };
     const slug = 'code';
 
-    mockAxios.delete.mockImplementationOnce(() => Promise.resolve({ data: message }));
+    mockAxios.delete.mockImplementationOnce(() =>
+      Promise.resolve({ data: message })
+    );
 
-    const expectedActions = [{ type: type.DELETE_ARTICLE_SUCCESS, payload: message, slug }];
+    const expectedActions = [
+      { type: type.DELETE_ARTICLE_SUCCESS, payload: message, slug }
+    ];
 
     await store.dispatch(deleteArticle(slug));
 
@@ -62,7 +78,9 @@ describe('Asynchronous delete my article', () => {
     const message = { articles: { message: 'Article is deleted' } };
     const slug = 'code';
 
-    mockAxios.delete.mockImplementationOnce(() => Promise.reject({ response: message }));
+    mockAxios.delete.mockImplementationOnce(() =>
+      Promise.reject({ response: message })
+    );
 
     await store.dispatch(deleteArticle(slug));
     expect(mockAxios.delete).toHaveBeenCalledTimes(1);
@@ -78,9 +96,13 @@ describe('Asynchronous edit my article', () => {
     const article = { message: 'Article is editted' };
     const slug = 'code';
 
-    mockAxios.put.mockImplementationOnce(() => Promise.resolve({ data: article }));
+    mockAxios.put.mockImplementationOnce(() =>
+      Promise.resolve({ data: article })
+    );
 
-    const expectedActions = [{ type: type.EDIT_ARTICLE_SUCCESS, payload: article, slug }];
+    const expectedActions = [
+      { type: type.EDIT_ARTICLE_SUCCESS, payload: article, slug }
+    ];
 
     await store.dispatch(editArticle(slug, mockData));
 
@@ -94,8 +116,12 @@ describe('Asynchronous edit my article', () => {
     const middlewares = [thunk];
     const mockStore = configureMockStore(middlewares);
     const store = mockStore();
-    const mockData = { article: { title: 'title1', descritpion: 'Description' } };
-    const response = { data: { errors: { description: 'description', title: 'title' } } };
+    const mockData = {
+      article: { title: 'title1', descritpion: 'Description' }
+    };
+    const response = {
+      data: { errors: { description: 'description', title: 'title' } }
+    };
     const slug = 'code';
 
     mockAxios.put.mockImplementationOnce(() => Promise.reject({ response }));
@@ -104,3 +130,27 @@ describe('Asynchronous edit my article', () => {
     expect(mockAxios.put).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('Testing search', () => {
+  it('Should search', async () => {
+    const middlewares = [thunk];
+    const mockStore = configureMockStore(middlewares);
+    const store = mockStore();
+    const mockData = {
+      article: { title: 'title1', descritpion: 'Description' }
+    };
+    const response = {
+      data: { errors: { description: 'description', title: 'title' } }
+    };
+    const param = 'hacking'
+    mockAxios.get.mockImplementationOnce(() => Promise.reject({ data: mockData }));
+
+    const expectedActions = [
+      { type: type.SEARCH_ARTICLE, payload: response.data }
+    ];
+
+    await store.dispatch(filterArticle());
+    expect(mockAxios.get).toHaveBeenCalledTimes(1);
+  });
+});
+

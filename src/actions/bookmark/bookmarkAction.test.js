@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import configureMockStore from 'redux-mock-store'
 import mockAxios from 'axios'
 import thunk from 'redux-thunk'
-import { createBookmark, getBookmark, deleteBookmark } from './bookmarkAction';
+import { createBookmark, getBookmark, deleteBookmark, getAllBookmarks } from './bookmarkAction';
 
 jest.mock('axios')
 
@@ -41,6 +41,45 @@ describe('getBookmark', () => {
         ]
 
         await store.dispatch(getBookmark(''))
+
+        expect(mockAxios.get).toHaveBeenCalledTimes(1)
+    })
+})
+
+describe('getAllBookmark', () => {
+    it('should dispatch success action', async () => {
+        const middlewares = [thunk]
+        const mockStore = configureMockStore(middlewares)
+        const store = mockStore()
+
+        const bookmarks = { 'bookmarks': [{ title: 'hello mate', author: 'reality' }] }
+
+        mockAxios.get.mockImplementationOnce(() => Promise.resolve({ data: bookmarks }))
+
+        const expectedActions = [
+            { type: 'FETCH_ALL_BOOKMARK_SUCCESS', payload: bookmarks.bookmarks },
+        ]
+
+        await store.dispatch(getAllBookmarks())
+
+        expect(store.getActions()).toEqual(expectedActions)
+        expect(mockAxios.get).toHaveBeenCalledTimes(1)
+    })
+
+    it('should dispatch failure action', async () => {
+        const middlewares = [thunk]
+        const mockStore = configureMockStore(middlewares)
+        const store = mockStore()
+
+        const error = { 'errors': "bookmark doesnot exist exists" }
+
+        mockAxios.get.mockImplementationOnce(() => Promise.reject({ response: 'error' }))
+
+        const expectedActions = [
+            { type: 'FETCH_ALL_BOOKMARK_FAILURE', error: error.errors },
+        ]
+
+        await store.dispatch(getAllBookmarks())
 
         expect(mockAxios.get).toHaveBeenCalledTimes(1)
     })
@@ -91,7 +130,7 @@ describe('createBoomark', () => {
         mockAxios.delete.mockImplementationOnce(() => Promise.resolve({ data: 'you have delete' }))
 
         const expectedActions = [
-            { type: 'DELETE_BOOKMARK_SUCCESS', payload: 'mock_Slug' },
+            { type: 'DELETE_BOOKMARK_SUCCESS', slug: 'mock_Slug' },
         ]
 
         await store.dispatch(deleteBookmark('mock_Slug'))

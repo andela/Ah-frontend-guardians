@@ -14,6 +14,8 @@ import CreateArticle from '../components/articles/CreateArticle';
 import { Article } from "../components/articles";
 import ResetEmail from '../components/resetPassword/resetEmail';
 import ResetPassword from '../components/resetPassword/resetPassword';
+import MyBookmarks from '../components/MyBookmarks/MyBookmarks';
+import SearchArticleView from '../views/search/SearchArticleView';
 
 const Routes = () => (
   <div>
@@ -29,8 +31,10 @@ const Routes = () => (
         <Route exact path="/articles/" component={CreateArticle} />
         <Route exact path="/article/:slug" component={Article} />
         <Route exact path="/rating" component={EditRatingsView} />
+        <Route exact path="/search" component={SearchArticleView} />
         <ToastContainer />
         <Route path="/reset-email" component={ResetEmail} />
+        <Route exact path="/bookmarks" component={MyBookmarks} />
         <Route path="/reset-password/:slug" component={ResetPassword} />
       </div>
     </Router>

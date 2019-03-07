@@ -1,7 +1,8 @@
 import { bookmarkReducer, createBookmarkReducer } from './bookmarkReducer';
 
-const { } = {
-    bookmark: {},
+const initialState = {
+    bookmarked: null,
+    payload: null,
 }
 
 describe('bookmarkReducer', () => {
@@ -14,7 +15,7 @@ describe('bookmarkReducer', () => {
             },
         }
 
-        const newState = bookmarkReducer({}, action)
+        const newState = bookmarkReducer(initialState, action)
 
         expect(newState.bookmarked).toEqual(true)
     })
@@ -23,17 +24,23 @@ describe('bookmarkReducer', () => {
             type: 'FETCH_BOOKMARK_FAILURE',
         }
 
-        const newState = bookmarkReducer({}, action)
+        const newState = bookmarkReducer(initialState, action)
 
         expect(newState.bookmarked).toEqual(false)
     })
     it('should return initial state with no action', () => {
-        expect(bookmarkReducer(undefined, {})).toEqual({
-            bookmarked: null,
+        expect(bookmarkReducer(undefined, initialState)).toEqual({
+            bookmarked: false,
             payload: null
         })
     })
 })
+
+const initialStates = {
+    bookmarked: null,
+    payload: null,
+    bookmarks: [{ id: 1, slug: "tpain", title: 'hello' }]
+}
 
 describe('createBookmarkReducer', () => {
     it('should create a bookmark on action CREATE_BOOKMARK_SUCCESS', () => {
@@ -42,7 +49,17 @@ describe('createBookmarkReducer', () => {
             bookmark: { title: 'hello' },
         }
 
-        const newState = createBookmarkReducer([], action)
+        const newState = createBookmarkReducer(initialStates, action)
+
+        expect(newState.bookmarked).toEqual(true)
+    })
+    it('should fetch a bookmark on action FETCH_ALL_BOOKMARK_SUCCESS', () => {
+        const action = {
+            type: 'FETCH_ALL_BOOKMARK_SUCCESS',
+            bookmarks: [{ title: 'hello' }],
+        }
+
+        const newState = createBookmarkReducer(initialStates, action)
 
         expect(newState.bookmarked).toEqual(true)
     })
@@ -52,20 +69,23 @@ describe('createBookmarkReducer', () => {
             slug: 'tpain',
         }
 
-        const newState = createBookmarkReducer([], action)
+        const newState = createBookmarkReducer(initialStates, action)
 
-        expect(newState.bookmarked).toEqual(false)
+        expect(newState).toEqual({ "bookmarked": false, "bookmarks": [], "payload": null })
     })
     it('should return no bookmarks on action CREATE_BOOKMARK_FAILURE', () => {
         const action = {
             type: 'CREATE_BOOKMARK_FAILURE',
         }
 
-        const newState = createBookmarkReducer([], action)
+        const newState = createBookmarkReducer(initialStates, action)
 
-        expect(newState).toEqual({ "bookmarked": false })
+        expect(newState).toEqual({ bookmarked: false, bookmarks: [{ id: 1, slug: "tpain", title: 'hello' }], payload: null })
     })
     it('should return initial state with no action', () => {
-        expect(createBookmarkReducer(undefined, [])).toEqual({})
+        expect(createBookmarkReducer(undefined, [])).toEqual({
+            "bookmarked": null,
+            "bookmarks": [],
+        })
     })
 })

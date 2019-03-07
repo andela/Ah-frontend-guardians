@@ -1,14 +1,16 @@
 import {
   DELETE_ARTICLE_SUCCESS,
   EDIT_ARTICLE_SUCCESS,
-  MY_ARTICLES_SUCCESS
+  MY_ARTICLES_SUCCESS,
+  SEARCH_ARTICLE
 } from '../../actions/articleActions/types';
 import { CREATE_ARTICLE, GET_ALL_ARTICLES, GET_ARTICLE } from '../../actions/ArticleActionCreator';
 
 const initialState = {
   my_articles: [],
   delete_article: {},
-  edit_article: {}
+  edit_article: {},
+  searchArticles:[]
 };
 
 export default function (state = initialState, action) {
@@ -41,6 +43,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         articles: action.articles
+      };
+      case SEARCH_ARTICLE:
+      return {
+        ...state,
+        searchArticles: action.payload
       };
     case GET_ARTICLE:
       return {

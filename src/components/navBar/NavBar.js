@@ -14,7 +14,7 @@ export class NavBar extends Component {
                     <span className='nav-links'>
                         <span className='business-logic'>
                             <NavLink to='/'>Home</NavLink>
-                            <a href='#'>Articles</a>
+                            <NavLink to='/search'>Articles</NavLink>
                         </span>
                         <span>
                             {this.props.signin.success ||

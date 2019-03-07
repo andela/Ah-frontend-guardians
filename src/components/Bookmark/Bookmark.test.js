@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { Bookmark, mapStateToProps } from './Bookmark';
 
@@ -50,11 +50,11 @@ describe('Bookmark', () => {
 
         wrapper = shallow(<Bookmark getBookmark={mockgetBookmarkfn} deleteBookmark={mockdeleteBookmarkfn}
             createBookmark={mockCreateBookmarkfn} {...props} />)
-        wrapper.find('#bookmark').simulate(
+        wrapper.find('#elbookmark').simulate(
             'click',
             { preventDefault() { } },
         )
-        expect(wrapper.find('#bookmark').length).toEqual(1)
+        expect(wrapper.find('#elbookmark').length).toEqual(1)
     })
 
     it('should call createBookmark', () => {
@@ -64,11 +64,11 @@ describe('Bookmark', () => {
 
         wrapper = shallow(<Bookmark getBookmark={mockgetBookmarkfn} deleteBookmark={mockdeleteBookmarkfn}
             createBookmark={mockCreateBookmarkfn} {...props} />)
-        wrapper.find('#bookmark').simulate(
+        wrapper.find('#elbookmark').simulate(
             'click',
             { preventDefault() { } },
         )
-        expect(wrapper.find('#bookmark').length).toEqual(1)
+        expect(wrapper.find('#elbookmark').length).toEqual(1)
     })
     it('mapStateToProps should return the right value', () => {
         const mockedState = {
