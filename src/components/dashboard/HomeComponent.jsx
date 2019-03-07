@@ -2,8 +2,20 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Article from './ArticleComponent';
+import { getDataThunk, getDataThunkTag } from '../../actions/ArticleActionCreator';
+import SidePanel from '../SidePanel';
 
 export class Home extends React.Component {
+
+  handleTags(tag) {
+    if(tag === 'all'){
+      this.props.getDataThunk()
+    }
+    else{
+      this.props.getDataThunkTag(tag)
+    }
+  }
+
   render() {
     const {
       articleReducer,
@@ -28,6 +40,7 @@ export class Home extends React.Component {
           </div>
         ) : (
           <Fragment>
+            <SidePanel handleTags={this.handleTags.bind(this)} />
             <div id="allArticles">{articles}</div>
             <div className=" align-middle" id="pagnation">
               <div className="page">
@@ -82,4 +95,4 @@ Home.defaultProps = {
   error: ''
 };
 export const mapStateToProps = state => state;
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, {getDataThunkTag, getDataThunk})(Home);
