@@ -4,15 +4,23 @@ import {Home}  from '../HomeComponent';
 import { Article } from '../ArticleComponent';
 import {mapStateToProps} from '../HomeComponent';
 
+const getDataThunkTag = jest.fn();
+const getDataThunk = jest.fn();
+const handleTags = jest.fn();
 
 const props={
     articleReducer:{
         articles:[{}]
-    }
+    },
+    getDataThunkTag,
+    getDataThunk,
+    handleTags
 }
 describe('Test home Component', ()=>{
     it('should render home component correctly', ()=>{
         let wrapper = shallow(<Home {...props}/>);
+        wrapper.instance().handleTags('all');
+        wrapper.instance().handleTags();
         expect(wrapper).toMatchSnapshot();
 
     });
@@ -32,6 +40,4 @@ describe('Test home Component', ()=>{
         expect(wrapper.instance().props.error).toEqual({})   
 
     });
-
-}
-)
+});

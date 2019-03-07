@@ -29,7 +29,7 @@ const getPages = (url) => (dispatch) => {
 const getDataThunk = () => (dispatch) => {
   axios
     .get(
-      'https://ah-backend-guardians-staging.herokuapp.com/api/articles/?limit=6'
+      `https://ah-backend-guardians-staging.herokuapp.com/api/articles/?limit=6`
     )
     .then((res) => {
       console.log(res.data)
@@ -42,6 +42,23 @@ const getDataThunk = () => (dispatch) => {
       dispatch(errorOccurred(error));
     });
 }
+
+const getDataThunkTag = (tag) => (dispatch) => {
+  axios
+    .get(
+      `https://ah-backend-guardians-staging.herokuapp.com/api/articles/?tags=${tag}`
+    )
+    .then((res) => {
+      dispatch({
+        type: GET_ALL_ARTICLES,
+        articles: res.data.articles
+      });
+    })
+    .catch((error) => {
+      dispatch(errorOccurred(error));
+    });
+}
+
 const getSingleDataThunk = slug => (dispatch) => {
   axios
     .get(
@@ -72,5 +89,6 @@ export {
   doNothing,
   getDataThunk,
   getPages,
+  getDataThunkTag,
   getSingleDataThunk
 };
