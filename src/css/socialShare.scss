@@ -1,0 +1,33 @@
+@keyframes socialShareAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.social-share {
+    .social-share-btn {
+        height: 50px;
+        line-height: 50px;
+        padding: 0px 25px;
+        border: 0;
+        border-radius: 13px;
+        position: absolute;
+        top: 40%;
+        float: left;
+        left: 0;
+        cursor: pointer;
+    }
+
+    #twitter-btn {
+        color: #1da1f2;
+    }
+
+    #fb-btn {
+        color: #576b95;
+    }
+    
+    i {
+        font-size: 50px;
+        margin: 0px 10px;
+    }
+
+}
