@@ -10,7 +10,6 @@ const headers = {
 }
 
 export const deleteCommentSuccessfully = (comments) => {
-  console.log(COMMENTS.UPDATE_COMMENT);
 
   return {
     type: COMMENTS.DELETE_COMMENT,

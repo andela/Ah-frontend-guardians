@@ -37,8 +37,6 @@ export class PostComment extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
     const token= window.localStorage.getItem('token');
-    console.log(token, ".............token");
-    
     if (!token){
       this.setState({errors:'Must first login to comment'})
     }

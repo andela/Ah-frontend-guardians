@@ -56,7 +56,6 @@ describe('create comment failure', () => {
     });
 
     it("should COMMENT_SUCCESFULLY", () => {
-      // slug = "about_moon"
       moxios.stubRequest('https://ah-backend-guardians-staging.herokuapp.com/api/the_moon/comments/', {
         status: 200,
         responseText: {
