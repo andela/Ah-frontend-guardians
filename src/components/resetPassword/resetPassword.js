@@ -20,7 +20,6 @@ export class ResetPassword extends Component {
         let slug = this.props.match.params.slug;
         this.props.fetchResetPassword(this.state.new_password, this.state.confirm_password, slug)
         
-        
     }
     onChange = event => {
         this.setState({ [event.target.name]: event.target.value });
