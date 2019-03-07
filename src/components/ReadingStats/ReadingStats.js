@@ -15,8 +15,9 @@ export class ReadingStats extends Component {
     let no_of_articles_read = 0;
     let total_read_time = 0;
     if (this.props.readingStats) {
+      let id = 0;
       readingStats = this.props.readingStats.recent_articles.map(stat => (
-        <div className="readingStatCard flex-container">
+        <div className="readingStatCard flex-container" key={id++}>
           <p>
             <h3>{stat.title}</h3>
           </p>
