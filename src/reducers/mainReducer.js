@@ -12,14 +12,17 @@ import { resetEmailReducer } from './resetEmailReducer';
 import { resetPasswordReducer } from './resetPasswordReducer';
 import ratingsReducer from './ratingsReducer/ratingsReducer';
 import readingStatsReducer from './readingStatsReducer/readingStatsReducer';
-
-
+import commentsReducer from './commentsReducer'
+import getcomments from './commentGetReducers'
+import updatecomments from '../reducers/commentsUpdateReducers'
+import commentDeleteReducers from '../reducers/commentDeleteReducers'
 
 const mainReducer = combineReducers({
   signin: loginReducer,
   navBarReducer,
   signup: signupReducer,
   articleReducer,
+  getarticlecomments: getcomments,
   social: socialReducer,
   profileReducer,
   errorReducer,
@@ -29,6 +32,9 @@ const mainReducer = combineReducers({
   bookmarks: createBookmarkReducer,
   likeArticleReducer,
   ratingsReducer,
-  readingStatsReducer
+  readingStatsReducer,
+  commentsReducer:commentsReducer,
+  updatecomments:updatecomments,
+  commentDeleteReducers:commentDeleteReducers,
 });
 export default mainReducer;
