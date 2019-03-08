@@ -14,7 +14,7 @@ const SocialMediaLinks = (props) => {
         </li>
         <li>
           <a href="http://www.twitter.com">
-            <span className="fab fa-twitter fa-2x mr-4" />
+            <span className="fab fa-twitter fa-2x" />
           </a>
         </li>
         <li>

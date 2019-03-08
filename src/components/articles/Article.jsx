@@ -9,6 +9,9 @@ import Bookmark from '../Bookmark/Bookmark';
 import EditRatingsView from '../../views/ratings/EditRatingsView';
 
 import SocialShare from '../SocialSharing/socialSharing';
+import PostComent from '../../components/views/commentsView/postComent'
+import GetComments from '../views/commentsView/CommentGetView'
+import Footer from '../Footer/Footer'
 export class Article extends Component {
   componentDidMount() {
     if (this.props.match) {
@@ -22,6 +25,9 @@ export class Article extends Component {
   }
 
   render() {
+    console.log(this.props.match.params.slug, "PROPSSSSSSS");
+    console.log(this.props, "props Articles");
+    
     if (this.props.articleReducer.article === undefined) return <div />;
     const {
       article: { author, title, body, description, read_time, slug, tags }
@@ -44,7 +50,7 @@ export class Article extends Component {
           {/* <SocialShare/> */}
           <div id="contentA">
             <div>
-              <h2>{title}</h2>
+              <h2></h2>
             </div>
             <div>
               <h5>{description}</h5>
@@ -63,7 +69,13 @@ export class Article extends Component {
             <Bookmark slug={slug} />
           </div>
           {tagList}
-        </div>
+          <div><PostComent slug={this.props.match.params.slug}/></div>
+         <div> <GetComments slug={this.props.match.params.slug} /></div>
+
+          <div className="middle"><div id="tagstyle" className="btn btn-primary">{tags}</div><Bookmark slug={slug} /></div>   
+          </div>
+          
+        <Footer />
       </div>
     );
   }
